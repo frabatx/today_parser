@@ -24,10 +24,10 @@ fetch("/trento/trento_total.geojson")
     //   new mapboxgl.Marker({
     //     color: "red"
     //   })
-    //     .setLngLat(feature.geometry.coordinates)
+    //      .setLngLat(feature.geometry.coordinates)
     //     .addTo(map);
     // })
-  });
+  }); 
 
 // CIRCLE MAP
 map.on('load',function(){
@@ -54,7 +54,7 @@ map.on('load',function(){
       16,
       ['interpolate', ['linear'], ['get', 'mag'], 1, 5, 6, 50]
       ],
-      'circle-color': 'blue',
+      'circle-color': '#01fffe',
       'circle-stroke-color': 'white',
       'circle-stroke-width': 1,
       // Transition from heatmap to circle layer by zoom level
@@ -74,4 +74,178 @@ map.on('load',function(){
 });
 
 
-// D3 SLIDER
+// D3 
+
+
+// create a matrix
+var matrix = [
+  [0, 0, 8, 0, 9, 33, 0, 2, 2, 0, 0, 0],
+  [0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
+  [8, 0, 0, 0, 0, 1, 0, 0, 8, 5, 2, 0],
+  [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+  [9, 3, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1],
+  [33, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 0, 0],
+  [2, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0],
+  [2, 0, 8, 0, 0, 1, 0, 0, 0, 0, 3, 0],
+  [0, 0, 5, 0, 0, 0, 19, 13, 0, 0, 0, 26],
+  [0, 0, 2, 0, 1, 0, 0, 0, 3, 0, 0, 0],
+  [0, 0, 0, 0, 1, 0, 0, 0, 0, 26, 0, 0]
+];
+
+var keywords = ["furti","truffa","droga","violenza sessuale" ,"truffe","rapine","incidenti stradali" ,"omicidio","degrado","morti" ,"prostituzione" ,"coronavirus"];
+// 4 groups, so create a vector of 4 colors
+var colors = [  "#f9665e",
+                "#afc7d0",
+                "#98e690",
+                // "#4f9ec4",
+                // "#92ccdd",
+                "#c7eff0",
+                "#f5d5fd",
+                "#fdc4ec",
+                "#ffc2cb", 
+                "#c5c2df", 
+                "#9b94be", 
+                "#f9c8a0",
+                "#f28997", 
+                "#7b8fa5"];
+
+// var colors = ["#C4C4C4",
+//                 "#69B40F",
+//                 "#EC1D25",
+//                 "#C8125C",
+//                 "#008FC8",
+//                 "#10218B",
+//                 "#134B24",
+//                 "#737373",
+//                 "#9b94be", 
+//                 "#f9c8a0",
+//                 "#f28997", 
+//                 "#7b8fa5"
+//               ];
+// // give this matrix to d3.chord(): it will calculates all the info we need to draw arc and ribbon
+// var res = d3.chord()
+// .padAngle(0.05)
+// .sortSubgroups(d3.descending)
+// (matrix)
+
+// // ogni arco rappresenta una keyword
+// var arc = d3.arc()
+// .innerRadius(200)
+// .outerRadius(210);
+
+// // Ribbons sono degli oggetti d3 che connetteranno gli archi
+// // mostrandone le connessioni
+// var trade = d3.ribbon().radius(200);
+
+// // create the svg area
+// var svg = d3.select("#chord-diagram")
+//   .append("svg")
+//     .attr("width", 440)
+//     .attr("height", 440)
+//   .append("g")
+//     .attr("transform", "translate(220,220)")
+
+
+// // Add the links between groups
+// svg
+//   .datum(res)
+//   .append("g")
+//   .selectAll("path")
+//   .data(function(d) { return d; })
+//   .enter()
+//   .append("path")
+//     .attr("d", trade
+//     )
+//     .style("fill", function(d){ return(colors[d.source.index]) }) // colors depend on the source group. Change to target otherwise.
+
+
+// // add the groups on the outer part of the circle
+// svg
+//   .datum(res)
+//   .append("g")
+//   .selectAll("g")
+//   .data(function(d) { return d.groups; })
+//   .enter()
+//   .append("g")
+//   .append("path")
+//     .style("fill", function(d,i){ return colors[i] })
+//     .attr("d", arc
+//     )
+
+/*
+//////////////////////////////////////////////////////////
+/////////////// Initiate Chord Diagram /////////////////////
+//////////////////////////////////////////////////////////
+*/
+var margin = {top: 30, right: 25, bottom: 20, left: 25},
+width = 650 - margin.left - margin.right,
+height = 600 - margin.top - margin.bottom,
+innerRadius = Math.min(width, height) * .39,
+outerRadius = innerRadius * 1.04;
+
+/*Initiate the SVG*/
+var svg = d3.select("#chord-diagram")
+            .append("svg:svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("svg:g")
+            .attr("transform", "translate(" + (margin.left + width/2) + "," + (margin.top + height/2) + ")");
+
+
+var chord = d3.chord()
+            .padAngle(.01)(matrix);
+
+
+// DISEGNO GLI ARCHI ESTERNI
+
+var arc = d3.arc()
+            .innerRadius(innerRadius)
+            .outerRadius(outerRadius);
+
+var g = svg.selectAll("g.group")
+            .data(chord.groups)
+            .enter().append("svg:g")
+            .attr("class", function(d) {return "group " + keywords[d.index];});
+
+g.append("svg:path")
+  .attr("class", "arc")
+  .style("fill", function(d,i){ return colors[i] })
+  .attr("d", arc)
+  .style("opacity", 0)
+  .transition().duration(1000)
+  .style("opacity", 1);
+
+
+// INITIATE NAMES
+
+g.append("svg:text")
+  .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
+  .attr("dy", ".35em")
+  .attr("class", "titles")
+  .attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
+  .attr("transform", function(d) {
+    return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+    +"translate(" + (innerRadius + 15) + ")"
+    +(d.angle > Math.PI ? "rotate(180)" : "");
+  })
+  .transition().duration(1000)
+  .text(function(d,i) { return keywords[i]; });
+
+
+  //INITIATE INNER CORDS
+// Ribbons sono degli oggetti d3 che connetteranno gli archi
+// mostrandone le connessioni
+var trade = d3.ribbon().radius(210);
+
+// // Add the links between groups
+g.append("g")
+  .datum(chord)
+  .selectAll("path")
+  .data(function(d) { return d; })
+  .enter()
+  .append("path")
+    .attr("d", trade)
+    .style("stroke", function(d,i) { return d3.rgb(colors[d.source.index]).darker(); })
+    .style("fill", function(d){ return(colors[d.source.index]) }) // colors depend on the source group. Change to target otherwise.
+    .style("opacity", 0.4)

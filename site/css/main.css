@@ -29,10 +29,19 @@ html, body{
     font-family: 'Open Sans', sans-serif;
 }
 
-.container {
+.container-map {
     margin: 0;
     padding: 0;
     height: 100%;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.single{
+    padding-left: 500px;
 }
 #firstrow{
     height: 100%;
