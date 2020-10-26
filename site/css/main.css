@@ -2,7 +2,18 @@ html, body{
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: #303030;
+    font-family: Montserrat, sans-serif;
 }
+
+text, h1, h2, h3, h4, h5, h6, p, a, li, ul{
+    color: white;
+}
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
 #map {
     position: relative;
     top:0;
@@ -38,6 +49,7 @@ html, body{
 .col-centered{
     float: none;
     margin: 0 auto;
+    text-align: center;
 }
 
 .single{
@@ -58,4 +70,16 @@ html, body{
     margin-left: 10px;
     margin-top: 7px;
     margin-right: 10px;
+}
+
+.axis line{
+    stroke: white;
+}
+
+.axis path {
+    stroke: white;
+}
+
+.axis text{
+    fill: white;
 }

@@ -54,8 +54,8 @@ map.on('load',function(){
       16,
       ['interpolate', ['linear'], ['get', 'mag'], 1, 5, 6, 50]
       ],
-      'circle-color': '#01fffe',
-      'circle-stroke-color': 'white',
+      'circle-color': '#90d4ed',
+      'circle-stroke-color': '#90d4ed',
       'circle-stroke-width': 1,
       // Transition from heatmap to circle layer by zoom level
       'circle-opacity': [
@@ -74,10 +74,11 @@ map.on('load',function(){
 });
 
 
-// D3 
+//##########################################
+//############ CHORD DIAGRAM ###############
+//##########################################
 
-
-// create a matrix
+// Creo gli oggetti 
 var matrix = [
   [0, 0, 8, 0, 9, 33, 0, 2, 2, 0, 0, 0],
   [0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
@@ -98,8 +99,6 @@ var keywords = ["furti","truffa","droga","violenza sessuale" ,"truffe","rapine",
 var colors = [  "#f9665e",
                 "#afc7d0",
                 "#98e690",
-                // "#4f9ec4",
-                // "#92ccdd",
                 "#c7eff0",
                 "#f5d5fd",
                 "#fdc4ec",
@@ -110,81 +109,14 @@ var colors = [  "#f9665e",
                 "#f28997", 
                 "#7b8fa5"];
 
-// var colors = ["#C4C4C4",
-//                 "#69B40F",
-//                 "#EC1D25",
-//                 "#C8125C",
-//                 "#008FC8",
-//                 "#10218B",
-//                 "#134B24",
-//                 "#737373",
-//                 "#9b94be", 
-//                 "#f9c8a0",
-//                 "#f28997", 
-//                 "#7b8fa5"
-//               ];
-// // give this matrix to d3.chord(): it will calculates all the info we need to draw arc and ribbon
-// var res = d3.chord()
-// .padAngle(0.05)
-// .sortSubgroups(d3.descending)
-// (matrix)
-
-// // ogni arco rappresenta una keyword
-// var arc = d3.arc()
-// .innerRadius(200)
-// .outerRadius(210);
-
-// // Ribbons sono degli oggetti d3 che connetteranno gli archi
-// // mostrandone le connessioni
-// var trade = d3.ribbon().radius(200);
-
-// // create the svg area
-// var svg = d3.select("#chord-diagram")
-//   .append("svg")
-//     .attr("width", 440)
-//     .attr("height", 440)
-//   .append("g")
-//     .attr("transform", "translate(220,220)")
-
-
-// // Add the links between groups
-// svg
-//   .datum(res)
-//   .append("g")
-//   .selectAll("path")
-//   .data(function(d) { return d; })
-//   .enter()
-//   .append("path")
-//     .attr("d", trade
-//     )
-//     .style("fill", function(d){ return(colors[d.source.index]) }) // colors depend on the source group. Change to target otherwise.
-
-
-// // add the groups on the outer part of the circle
-// svg
-//   .datum(res)
-//   .append("g")
-//   .selectAll("g")
-//   .data(function(d) { return d.groups; })
-//   .enter()
-//   .append("g")
-//   .append("path")
-//     .style("fill", function(d,i){ return colors[i] })
-//     .attr("d", arc
-//     )
-
-/*
-//////////////////////////////////////////////////////////
-/////////////// Initiate Chord Diagram /////////////////////
-//////////////////////////////////////////////////////////
-*/
+// Inizializzo le variabili
 var margin = {top: 30, right: 25, bottom: 20, left: 25},
-width = 650 - margin.left - margin.right,
+width = 800 - margin.left - margin.right,
 height = 600 - margin.top - margin.bottom,
 innerRadius = Math.min(width, height) * .39,
 outerRadius = innerRadius * 1.04;
 
-/*Initiate the SVG*/
+// Creo l'SVG
 var svg = d3.select("#chord-diagram")
             .append("svg:svg")
             .attr("width", width + margin.left + margin.right)
@@ -198,7 +130,6 @@ var chord = d3.chord()
 
 
 // DISEGNO GLI ARCHI ESTERNI
-
 var arc = d3.arc()
             .innerRadius(innerRadius)
             .outerRadius(outerRadius);
@@ -218,7 +149,6 @@ g.append("svg:path")
 
 
 // INITIATE NAMES
-
 g.append("svg:text")
   .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
   .attr("dy", ".35em")
@@ -230,15 +160,16 @@ g.append("svg:text")
     +(d.angle > Math.PI ? "rotate(180)" : "");
   })
   .transition().duration(1000)
-  .text(function(d,i) { return keywords[i]; });
+  .text(function(d,i) { return keywords[i]; })
+  .style("fill", "white");
 
 
-  //INITIATE INNER CORDS
+//INITIATE INNER CORDS
 // Ribbons sono degli oggetti d3 che connetteranno gli archi
 // mostrandone le connessioni
 var trade = d3.ribbon().radius(210);
 
-// // Add the links between groups
+// Add the links between groups
 g.append("g")
   .datum(chord)
   .selectAll("path")
@@ -249,3 +180,84 @@ g.append("g")
     .style("stroke", function(d,i) { return d3.rgb(colors[d.source.index]).darker(); })
     .style("fill", function(d){ return(colors[d.source.index]) }) // colors depend on the source group. Change to target otherwise.
     .style("opacity", 0.4)
+
+
+//##########################################
+//############   BAR CHART   ###############
+//##########################################
+
+// var data = [
+//   {key: 'Furti', value: '753'},
+//   {key: 'Morti', value: '716'},
+//   {key: 'Coronavirus', value: '555'},
+//   {key: 'Droga', value: '539'},
+//   {key: 'Orso', value: '298'},
+//   {key: 'Truffe', value: '232'},
+//   {key: 'Rapine', value: '170'},
+//   {key: 'Incidenti Stradali', value: '163'},
+//   {key: 'Omicidio', value: '132'},
+//   {key: 'Degrado', value: '124'},
+//   {key: 'Prostituzione', value: '43'},
+//   {key: 'Truffa', value: '35'},
+//   {key: 'Violenza', value: '15'},
+//   {key: 'Violenza Sessuale', value: '5'},
+// ];
+
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 0, bottom: 30, left: 100},
+    width = 500 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+// set the ranges
+var y = d3.scaleBand()
+          .range([height, 0])
+          .padding(0.1);
+var x = d3.scaleLinear()
+          .range([0, width]);
+          
+// append the svg object to the body of the page
+// append a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg = d3.select("#bar-chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// get the data
+d3.csv("/site/src/keywords_count.csv", function(error, data) {
+  if (error) throw error;
+
+  // format the data
+  data.forEach(function(d) {
+    d.values = +d.values;
+  });
+
+  // Scale the range of the data in the domains
+  y.domain(data.map(function(d) { return d.keywords; }));
+  x.domain([0, d3.max(data, function(d) { return d.values + 50; })]);
+
+  // append the rectangles for the bar chart
+  svg.selectAll(".bar")
+      .data(data)
+      .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", x(10))
+      .attr("width", function(d) { return  x(d.values) + 10; })
+      .attr("y", function(d) { return y(d.keywords); })
+      .style("fill", "#90d4ed")
+      .attr("height", y.bandwidth());
+      
+      
+
+  // add the x Axis
+  svg.append("g")
+      .attr("class","axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  // add the y Axis
+  svg.append("g")
+    .attr("class","axis" )
+    .call(d3.axisLeft(y));
+});
