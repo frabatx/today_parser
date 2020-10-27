@@ -16,10 +16,26 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 
+  
+
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- External JS library -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+  <script src="https://bastitee.github.io/d3-workbench-ghp/0.3.0-pre.f56166a/d3-wb.min.js"></script>
+  <!-- Color Scale -->
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <!-- Custom JS -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/multiline_chart.js"></script>
+  <script type="module" src="js/bar-chart.js"></script>
+  <script type="module" src="js/wordcloud.js"></script>
 
   <!-- Navbar -->
   <nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark">
@@ -87,6 +103,18 @@
         <div id="chord-diagram"></div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-8 col-centered">
+        <div id="content">
+          <p>
+            Dopo questa attentissima analisi si é riscontrato che le relazioni tra le keywords sono insufficienti
+            per poter unificare i trend. Quello che peró ricaviamo da questa analisi sono le relazioni tra essi.
+            Sarebbe bello il barchart che quantifica al suo interno le relazioni con le altre. 
+            Al passaggio del mouse fa illuminare la relazione.
+          </p>
+        </div>
+      </div>
+    </div>
   </container>
 
   <!-- Fine Keywords -->
@@ -95,8 +123,16 @@
   <hr class="featurette-divider">
   <container>
     <div class="row">
-      <div class="col-md-4 col-centered">
+      <div class="col-md col-centered">
         <h1>Trend Scoperti</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-right">
+          <div id="multiline-chart"></div> 
+      </div>
+      <div class="col-md-4 col-left">
+        <svg id="trend-legend" height=500 width=200></svg>
       </div>
     </div>
   </container>
@@ -110,6 +146,14 @@
       <div class="col-md-8 col-centered">
         <h1>TFIDF</h1>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-right">
+        <svg id="standalone-svg"></svg>
+      </div>
+      <!-- <div class="col-md-4 col-left">
+        <svg id="trend-legend" height=500 width=200></svg>
+      </div> -->
     </div>
   </container>
 
@@ -129,15 +173,6 @@
 
 
 
-  <!-- External JS library -->
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-  <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
-  
-  <!-- Custom JS -->
-  <script type="module" src="js/main.js"></script>
 
 </body>
 </html>

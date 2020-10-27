@@ -51,6 +51,20 @@ h1{
     margin: 0 auto;
     text-align: center;
 }
+.col-left{
+    float: none;
+    margin: 0 auto;
+    text-align: left;
+}
+.col-right{
+    float: none;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.labelled-chart{
+    display: inline;
+}
 
 .single{
     padding-left: 500px;
