@@ -42,7 +42,7 @@ d3.csv("/trento/trendPerYear.csv", function(data) {
       };
     });
     // CDati transformati in tuple (time-value)
-    console.log(dataReady)
+    //console.log(dataReady)
 
     // Add X axis 
     var x = d3.scaleTime()
@@ -106,7 +106,7 @@ d3.csv("/trento/trendPerYear.csv", function(data) {
         .attr("cx", function(d) { return x(d.time) } )
         .attr("cy", function(d) { return y(d.value) } )
         .attr("r", 3)
-        .attr("stroke", "white")
+        .attr("stroke", "grey")
 
     // Add a label at the end of each line
     // multiline_svg

@@ -1,7 +1,6 @@
 import "https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js";
 
 // MAP INITIALIZATION
-
 const mapbox_token = 'pk.eyJ1IjoiZnJhYmF0eCIsImEiOiJja2diZWVyeXEwZ2F3MnNwZHVsYm4ydXphIn0.vMjCxPk6BAzzyXe81jTmMg';
 mapboxgl.accessToken = mapbox_token; 
 
