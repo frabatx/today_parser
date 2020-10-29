@@ -30,7 +30,7 @@ var grey = "#343a40"
 var yellow = "#fca311"
 
 //Read the data
-d3.csv("/trento/trendPerYear.csv", function(data) {
+d3.csv("src/trendPerYear.csv", function(data) {
 
     // Reformat the data: we need an array of arrays of {x, y} tuples
     var dataReady = allGroup.map( function(grpName) { // .map allows to do something for each element of the list
@@ -41,8 +41,8 @@ d3.csv("/trento/trendPerYear.csv", function(data) {
         })
       };
     });
-    // CDati transformati in tuple (time-value)
-    //console.log(dataReady)
+    // Dati transformati in tuple (time-value)
+    console.log(dataReady)
 
     // Add X axis 
     var x = d3.scaleTime()

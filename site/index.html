@@ -4,22 +4,36 @@
   <title>Trento Today Analysis</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-
   <!-- CSS -->
   <link rel="stylesheet" href="css/main.css">
-
   <!-- Mapbox -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-
-  
-
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+  
+  
+  <!-- Range slider code -->
+  <script src="https://cdn.rawgit.com/RasmusFonseca/d3RangeSlider/master/d3RangeSlider.js"></script>
+
+  <!-- Range slider style -->
+  <link href="https://cdn.rawgit.com/RasmusFonseca/d3RangeSlider/master/d3RangeSlider.css" rel="stylesheet">
+
+  <style type="text/css">
+      #slider-container {
+          position: relative;
+          height:30px;
+          background-color: #eeeef5;
+      }
+  </style>
+
+
+  
+  
+
 </head>
 <body>
 
@@ -67,8 +81,16 @@
       <hr class="featurette-divider">
     <div class="row">
       <div class="col">
-        <div id="slider"></div>
-        <div id="range-label"></div>
+        
+        <div id="slider-container"></div>
+        <script type="text/javascript">
+        var slider = createD3RangeSlider(2011, 2020, "#slider-container");
+        slider.range(2012,2013);
+        // Listener gets added
+        slider.onChange(function(newRange){
+          console.log(newRange);
+        });
+        </script>
       </div>
     </div>
   </container>
