@@ -23,10 +23,16 @@
   <link href="https://cdn.rawgit.com/RasmusFonseca/d3RangeSlider/master/d3RangeSlider.css" rel="stylesheet">
 
   <style type="text/css">
-      #slider-container {
+      .slider-container {
           position: relative;
           height:30px;
-          background-color: #eeeef5;
+          background-color: #343a40;
+      }
+      .slider{
+        background-color: #fca311;
+      }
+      .handle.WW, .handle.EE{
+        background-color: #fca311;
       }
   </style>
 
@@ -46,6 +52,9 @@
   <script type="text/javascript" src="js/cloud/d3.layout.cloud.js"></script>
   <!-- Color Scale -->
   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <!-- Geo Feature -->
+  <script src="https://d3js.org/d3-array.v2.min.js"></script>
+  <script src="https://d3js.org/d3-geo.v2.min.js"></script>
   <!-- Custom JS -->
   <script type="module" src="js/main.js"></script>
   <script type="module" src="js/multiline_chart.js"></script>
@@ -81,16 +90,7 @@
       <hr class="featurette-divider">
     <div class="row">
       <div class="col">
-        
         <div id="slider-container"></div>
-        <script type="text/javascript">
-        var slider = createD3RangeSlider(2011, 2020, "#slider-container");
-        slider.range(2012,2013);
-        // Listener gets added
-        slider.onChange(function(newRange){
-          console.log(newRange);
-        });
-        </script>
       </div>
     </div>
   </container>

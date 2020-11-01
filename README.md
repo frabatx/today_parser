@@ -13,3 +13,7 @@ Il progetto data_manipulation.py manipola i dataset e li prepara per l'esplorazi
 * TFIDF sulle parole (wordcloud animata)
 
 
+# TODO
+Rivedere l'intera mappa con la nuova forma del dataset, dovrebbe permettere di filtrare i punti attraverso le classi secondo un nuovo parametro impostato direttamente nel dataset sotto forma di stringa
+.attr("class", function(d){return d.features.properties.classes})
+

@@ -42,7 +42,7 @@ d3.csv("src/trendPerYear.csv", function(data) {
       };
     });
     // Dati transformati in tuple (time-value)
-    console.log(dataReady)
+    //console.log(dataReady)
 
     // Add X axis 
     var x = d3.scaleTime()
