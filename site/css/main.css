@@ -13,9 +13,13 @@ h1{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
+body{
+    margin-top: 50px;
+}
 
 #map {
     position: relative;
+    margin: 0;
     top:0;
     bottom: 0;
     margin-bottom: 100px;
@@ -70,20 +74,8 @@ h1{
     padding-left: 500px;
 }
 #firstrow{
-    height: 100%;
-}
-
-#range-label{
-    position: absolute;
-    margin: 10px;
-}
-#slider-container {
-    position: relative;
-    height: 30px;
-    background-color: transparent;
-    margin-left: 10px;
-    margin-top: 7px;
-    margin-right: 10px;
+    height: 90%;
+    justify-content: center;
 }
 
 .axis line{
@@ -97,6 +89,94 @@ h1{
 .axis text{
     fill: white;
 }
+/* SLIDER */
+
+#slider-container svg line.track {
+    stroke-opacity: 1;
+    stroke: #343a40;
+    stroke-width: 1px;
+    
+}
+#slider-container svg line.track-inset {
+    stroke: #343a40;;
+    stroke-width: 8px;
+}
+#slider-container svg line.track-overlay {
+    stroke: #343a40;
+    stroke-width: 40px;
+    stroke-opacity: 0;
+    cursor: crosshair;
+}
+#slider-container svg .handle {
+    fill: #fca311;
+    
+}
+#slider-container svg line.track-overlay, #slider-container svg line.track, #slider-container svg line.track-inset {
+    stroke-linecap: round;
+}
+text{
+    fill: white;
+}
+
+.btn-group button {
+    background-color:  #343a40; /* Green background */
+    border: none; /* Green border */
+    color: white; /* White text */
+    padding: 5px 15px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    margin: 10px;
+    display: block; /* Make the buttons appear below each other */
+    border-radius: 10px;
+    height: 35px;
+    width: 150px;
+  }
+
+  .btn-group{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    left:0;
+  }
+
+  .btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #fca311;
+  }
+
+  #keys-col{
+    padding-top: 15%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+/* .btn-group{
+    height: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+button{
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #fca311;
+} */
+
+/* fine */
 
 #word-cloud {
     -webkit-transition: opacity .5s ease-in-out;

@@ -20,13 +20,13 @@ $(function() {
     //inserisco il nome nel bottone.
     
     document.getElementById('keysbutton').innerHTML = this.text;
-    
     document.getElementById('word-cloud').innerHTML = '';
+
     //##########################################
     //############   WORD CLOUD   ##############
     //##########################################
-    d3.csv(`/trento/wordcloud/${this.text}.csv`, function(data){
-      //console.log(data);
+    d3.csv(`/home/frabatx/Documents/University/Data_journalism/Project_Article/today_parser/site/src/wordcloud/${this.text}.csv`, function(data){
+      console.log(this.text);
       var leaderScale = d3.scaleLinear();
       //formatter
       var s = d3.formatSpecifier("f");
