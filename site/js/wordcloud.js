@@ -21,12 +21,13 @@ $(function() {
     
     document.getElementById('keysbutton').innerHTML = this.text;
     document.getElementById('word-cloud').innerHTML = '';
-
+    console.log(this.text);
+    const newLocal = `/site/src/wordcloud/${this.text}.csv`;
     //##########################################
     //############   WORD CLOUD   ##############
     //##########################################
-    d3.csv(`/home/frabatx/Documents/University/Data_journalism/Project_Article/today_parser/site/src/wordcloud/${this.text}.csv`, function(data){
-      console.log(this.text);
+    d3.csv(newLocal, function(data){
+      
       var leaderScale = d3.scaleLinear();
       //formatter
       var s = d3.formatSpecifier("f");
