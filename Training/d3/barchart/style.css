@@ -1,0 +1,20 @@
+
+/* questo applica a tutti gli elementi uno stile identico
+    box-sizing in questa modalitá fa si che tutti gli elementi
+    abbiano le stesse misure
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    /* allineo verticalmente */
+    align-items: center;
+    /* allineo orizzontalmente */
+    justify-content: center;
+}

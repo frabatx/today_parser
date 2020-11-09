@@ -48,10 +48,10 @@ d3.json('/site/src/trento_total.geojson', function(data) {
     container: 'map',
     style: 'mapbox://styles/frabatx/ckfs593cm0p7p19qp12hupllr',
     center: [11.122, 46.066],
-    zoom: 12
+    zoom: 10
   });
 
-  map.scrollZoom.disable();
+//   map.scrollZoom.disable();
 
   map.on("viewreset", render);
   map.on("move", render);

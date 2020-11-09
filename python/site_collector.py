@@ -4,6 +4,7 @@
 # TODO Today è una giornale di tutta italia, sarebbe carino vedere se la stessa cosa che faccio su trento è possibile farlo su tutti i capoluoghi supportati, questo implica imparare javascri
 from bs4 import BeautifulSoup as soup
 from urllib.request import urlopen as uReq
+from http.cookiejar import CookieJar
 from pandas.io.json import json_normalize   
 import pandas as pd  
 import time
@@ -21,7 +22,7 @@ import os
 # In order to use the script for each city is useful adding name_city to the path
 city_name = "trento"
 
-years = ["2020","2019","2018","2017","2016"]
+years = ["2020"]
 #,"2015","2014","2013","2012","2011"
 #year = 2011
 for year in years:
@@ -36,7 +37,7 @@ for year in years:
     model_path = "model/articolo/"
 
     # Building URL. The url is build as site_search + date_path + model_path
-    my_url = "http://www.{}today.it/search/{}{}".format(city_name, model_path,date_path)
+    my_url = "https://www.{}today.it/search/{}{}".format(city_name, model_path,date_path)
 
     print("Page we are analysing : ", my_url)
 
@@ -74,7 +75,7 @@ for year in years:
     for i in range(1,int(n_pages)+1):
         try:
             url_complete = url_search + str(i) #creo il link
-            #print(url_complete)
+            print(url_complete)
 
             UClient =  uReq(url_complete)
             #time.sleep(2)
@@ -87,7 +88,7 @@ for year in years:
 
             for art in articles:
                 if(art.article.div.header.p.span.get_text()=="Articolo"):
-                    link = 'http://www.trentotoday.it{}'.format(art.a['href'])
+                    link = 'https://www.trentotoday.it{}'.format(art.a['href'])
                     #df = df.append({'title':'', 'link':link, 'timestamp':'' ,'text':'', 'keywords':'', 'address':'', 'gps':''},ignore_index = True)
                     links.append(link)
         except:
