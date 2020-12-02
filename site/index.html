@@ -14,14 +14,28 @@
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
-  
-  
   <!-- Range slider code -->
   <script src="https://cdn.rawgit.com/RasmusFonseca/d3RangeSlider/master/d3RangeSlider.js"></script>
 
   <!-- Range slider style -->
   <link href="https://cdn.rawgit.com/RasmusFonseca/d3RangeSlider/master/d3RangeSlider.css" rel="stylesheet">
-
+  <!-- External JS library -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+  <script src="https://bastitee.github.io/d3-workbench-ghp/0.3.0-pre.f56166a/d3-wb.min.js"></script>
+  <script type="text/javascript" src="js/cloud/d3.layout.cloud.js"></script>
+  <!-- Color Scale -->
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <!-- Geo Feature -->
+  <script src="https://d3js.org/d3-array.v2.min.js"></script>
+  <script src="https://d3js.org/d3-geo.v2.min.js"></script>
+  <!-- Custom JS -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/multiline_chart.js"></script>
+  <script type="module" src="js/bar-chart.js"></script>
+  <script type="module" src="js/wordcloud.js"></script>
   <style type="text/css">
       .slider-container {
           position: relative;
@@ -43,23 +57,7 @@
 </head>
 <body>
 
-  <!-- External JS library -->
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-  <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
-  <script src="https://bastitee.github.io/d3-workbench-ghp/0.3.0-pre.f56166a/d3-wb.min.js"></script>
-  <script type="text/javascript" src="js/cloud/d3.layout.cloud.js"></script>
-  <!-- Color Scale -->
-  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-  <!-- Geo Feature -->
-  <script src="https://d3js.org/d3-array.v2.min.js"></script>
-  <script src="https://d3js.org/d3-geo.v2.min.js"></script>
-  <!-- Custom JS -->
-  <script type="module" src="js/main.js"></script>
-  <script type="module" src="js/multiline_chart.js"></script>
-  <script type="module" src="js/bar-chart.js"></script>
-  <script type="module" src="js/wordcloud.js"></script>
+
 
   <!-- Navbar -->
   <nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark">

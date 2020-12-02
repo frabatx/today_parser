@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{ 
+    font-family: 'Hudi', sans-serif;
+    font-size: 1.2rem;
+}
+.main{
+    font-family: "Montserrat", sans-serif;
+    color: #4d4f54; 
+}
+h1{
+    font-size: 5rem;
+}
+h2{
+    font-size: 3rem;
+}
+p{
+    line-height: 1.7;
+}
+nav{
+    position: fixed;
+    justify-content: center;
+    top: 0;
+    width: 100%;
+    display: flex;
+    height: 6vh;
+    background:  #1f1f1f;
+}
+section{ 
+    height: 100vh;
+}
+
+
+.yellowlight{
+    color: #ffd900;
+
+}
+.highlight{
+    /* background:  #ffe659;  */
+    background: #ffd900;
+    color: black;
+}
+.highlight-lite{
+    background: white;
+    color: black;
+    text-decoration: none;
+
+}
+
+/* INTRO */
+
+.landing{
+    margin-top: 6vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 2fr;
+    height: 100vh;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    width: 80%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.nav-links li a{
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.landing-text{
+    grid-area: 1 / 1 / 3 / 2;
+    background: rgb(46, 46, 46);
+    color: rgb(216, 216, 216);
+    margin: 0em;
+    padding: 4em;
+}
+
+.landing-image{
+    grid-area: 1/2 /3/3;
+    background: url("./src/4_5915707698027956208.jpg");
+}
+.description{
+    grid-area: 2/1/3/2;
+    padding: 4em;
+    color: rgb(216, 216, 216);
+    font-family: "hidi", sans-serif;
+    font-size: 1.3rem;
+}
+
+
+/* INTRODUCTION */
+.intro-grid{
+    background: rgb(71, 71, 71);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "introduction svg";
+    height: 100vh;
+}
+.intro-text{
+    grid-area: introduction;
+    height: 100vh;
+    color: rgb(216, 216, 216);
+    font-family: "hidi", sans-serif;
+    font-size: 1.3rem;
+    align-self: center;
+    padding: 4em;
+}
+.intro-text p{
+    margin-top: 1.2em;
+}
+
+.intro-svg{
+    grid-area: svg;
+    background: rgb(46, 46, 46);
+    padding: 5em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* ANALISI */
+.analisi-grid{
+    background: rgb(71, 71, 71);
+    display: grid;
+    grid-template-columns: 40% auto;
+    grid-template-rows: auto;
+    grid-template-areas: "description graph";
+    height: 100vh;
+}
+
+.analisi-description{
+    grid-area: description;
+    height: 100vh;
+    background: rgb(46, 46, 46);
+    color: rgb(216, 216, 216);
+    font-family: "hidi", sans-serif;
+    font-size: 1.3rem;
+    align-self: center;
+    grid-area: 1/1/2/2;
+    padding: 4em;
+    padding-top: 8em;
+}
+
+.best50key{
+    align-self: center;
+    margin: 4em;
+}
+
+.best50key rect{
+    fill: rgb(255, 136, 0);
+}
+
+.best50key g{
+    color: rgb(216, 216, 216);
+}
+
+#best50svg line{
+    stroke: rgb(87, 87, 87);
+}
+
+.titleTop50Key{
+    font-size: 3em;
+    fill: rgb(216, 216, 216);
+}
+
+.xAxisTitle{
+    font-size: 1.3rem;
+}
+
+/* ANALISI TEMPORALE */
+
+.analisi-temporale-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 33% 33% auto;
+    grid-template-areas: 
+    "graficoAnnuale annualeDescrizione"
+    "graficoMensile graficoMensile"
+    "descrizioneMensile graficoMensilePiccolo";
+    height: 200vh;
+}
+
+.analisiAnnualeDescription{
+    background: black;
+    grid-area: annualeDescrizione;
+}
+
+.graficoAnnuale{
+    background: rgb(71, 71, 71);
+    grid-area: graficoAnnuale;
+}
+.graficoAnnuale svg{
+    color: rgb(216, 216, 216);
+    margin: 1rem;
+    justify-self: center;
+    align-self: center;
+}
+
+.linePath{
+    fill: none;
+    stroke: rgb(255, 136, 0);
+    stroke-width: 5;
+}
+.graficoAnnuale .axisTitle{
+    font-size: 1.3rem;
+}
+
+.graficoAnnuale line{
+    stroke: rgb(87, 87, 87);
+}
+
+.analisiMensileDescription{
+    background: blue;
+
+    grid-area: descrizioneMensile;
+}
+
+.graficoMensile{
+    background: lightcoral;
+
+    grid-area: graficoMensile;
+}
+
+.graficoMensilePiccolo{
+    background: green;
+
+    grid-area: graficoMensilePiccolo;
+}
+
