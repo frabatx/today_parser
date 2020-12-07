@@ -361,4 +361,146 @@ nav{
     font-family: "hidi", sans-serif;
     padding: 4rem;
 }
+
+/* Mappa Comuni */
+
+/* MAPPE */
+/* Mappa quartieri Trento */
+
+.analisi-geografica-comuni{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+.analisi-geografica-comuni-grid{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "mappaComuni descrizioneComuni";
+    height: 100%;
+}
+
+.mapboxgl-popup-content{
+    background: #1f1f1f;
+    color: white;
+    font-style: 'Monserrat', sans-serif;
+}
+
+.mapComuni{
+    grid-area: mappaComuni;
+}
+.comuniDescription{
+    grid-area: descrizioneComuni;
+    background: rgb(46, 46, 46);
+    font-family: "hidi", sans-serif;
+    padding: 4rem;
+}
+
+#map-comuni {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+.map-overlay-comuni {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.6);
+    margin-right: 20px;
+    font-family: 'Montserrat', sans-serif;
+    overflow: auto;
+    border-radius: 3px;
+  }
+  
+  #features-comuni {
+    position: relative;
+    height: 150px;
+    width: 300px;
+    margin: 2em;
+    top:2em;
+    padding: 1em;
+  }
+  
+  #legend-comuni {
+    font-family: "hidi", sans-serif;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 2em;
+    padding: 2em;
+    height: 200px;
+    margin: 2em;
+    width: 150px;
+  }
+  #pd-comuni{
+    font-family: "hidi", sans-serif;
+    margin-top: 2em;
+    color: rgb(46, 46, 46);
+  }
+  #pd-comuni strong{
+    font-family: "hidi", sans-serif;
+    color: rgb(46, 46, 46);
+  }
+  #pd-comuni em{
+    font-family: "hidi", sans-serif;
+    color: rgb(46, 46, 46);
+  }
+  #pd-comuni p{
+    font-family: "hidi", sans-serif;
+    color: rgb(46, 46, 46);
+  }
+  .legend-key-comuni {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+  }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
