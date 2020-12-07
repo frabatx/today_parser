@@ -177,7 +177,7 @@ nav{
 
 /* ANALISI TEMPORALE */
 .analisi-temporale{
-    height: 236vh;
+    height: 300vh;
 }
 .analisi-temporale-grid{
     display: grid;
@@ -187,8 +187,10 @@ nav{
     "graficoAnnuale annualeDescrizione"
     "graficoMensile graficoMensile"
     "descrizioneMensile graficoMensilePiccolo";
-    height: 200vh;
+    height: 100%;
 }
+
+/* ANALISI ANNUALE */
 
 .analisiAnnualeDescription{
     background: rgb(46, 46, 46);
@@ -222,12 +224,16 @@ nav{
     stroke: rgb(87, 87, 87);
 }
 
+/* DESCRIZIONE GRAFICO MENSILE */
+
 .analisiMensileDescription{
     grid-area: descrizioneMensile;
     background: rgb(46, 46, 46);
     font-family: "hidi", sans-serif;
     padding: 4rem;
 }
+
+/* GRAFICO MENSILE */
 
 .graficoMensile{
     background: rgb(71, 71, 71);
@@ -238,6 +244,8 @@ nav{
 .graficoMensile .axisTitle{
     font-size: 1.5rem;
 }
+
+/* GRAFICO 2020 VS 2021 */
 
 .graficoMensilePiccolo{
     background: rgb(71, 71, 71);
@@ -258,8 +266,99 @@ nav{
     transform: translate(-40px,0);
 }
 
-.mappaComuni{
-    display: grid;
+/* MAPPE */
+/* Mappa quartieri Trento */
+
+.analisi-geografica{
+    position: relative;
     height: 100vh;
     width: 100%;
 }
+.analisi-geografica-grid{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "mappaQuartieri descrizioneQuartieri";
+    height: 100%;
+}
+
+.mapboxgl-popup-content{
+    background: #1f1f1f;
+    color: white;
+    font-style: 'Monserrat', sans-serif;
+}
+
+.mapQuartieri{
+    grid-area: mappaQuartieri;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+.map-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.6);
+    margin-right: 20px;
+    font-family: 'Montserrat', sans-serif;
+    overflow: auto;
+    border-radius: 3px;
+  }
+  
+  #features {
+    position: relative;
+    height: 150px;
+    width: 300px;
+    margin: 2em;
+    top:2em;
+    padding: 1em;
+  }
+  
+  #legend {
+    font-family: "hidi", sans-serif;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 2em;
+    padding: 2em;
+    height: 200px;
+    margin: 2em;
+    width: 150px;
+  }
+  #pd{
+    font-family: "hidi", sans-serif;
+    margin-top: 2em;
+    color: rgb(46, 46, 46);
+  }
+  #pd strong{
+    font-family: "hidi", sans-serif;
+    color: rgb(46, 46, 46);
+  }
+  #pd em{
+    font-family: "hidi", sans-serif;
+    color: rgb(46, 46, 46);
+  }
+  #pd p{
+    font-family: "hidi", sans-serif;
+    color: rgb(46, 46, 46);
+  }
+  
+  .legend-key {
+      
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+  }
+
+  .quartieriDescription{
+    grid-area: descrizioneQuartieri;
+    background: rgb(46, 46, 46);
+    font-family: "hidi", sans-serif;
+    padding: 4rem;
+}
+  

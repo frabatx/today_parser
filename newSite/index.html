@@ -203,7 +203,7 @@
                     
                     </div>
                     <div class="best50key">
-                        <svg width="700" height="800" class="best50svg"></svg>
+                        <svg width="500" height="800" class="best50svg"></svg>
                     </div>
                 </div>
             </section>
@@ -254,7 +254,7 @@
                 
                 
                     <div class="graficoMensile">
-                        <svg id="graficoMensilesvg" width="1300" height="600"></svg>
+                        <svg id="graficoMensilesvg" width="1000" height="600"></svg>
                     </div>
                     <div class="graficoMensilePiccolo">
                         <svg id="graficoMensilePiccolosvg" width="500" height="700"></svg>
@@ -263,8 +263,47 @@
             
             </section>
 
-            <section class="mappaComuni">
-                <div id='map' style='width: 800px; height: 800px;'></div>
+            <section class="analisi-geografica">
+                <div class="analisi-geografica-grid">
+
+                    <div class="quartieriDescription">
+                        <h2><span class="highlight">Analisi Geografica</span></h2>
+                        <br>
+                        <p>Qui ci viene mostrato come ci sia una evidente differenza in numero di articoli 
+                            tra alcuni periodi dell'anno. I mesi in cui ci sono picchi positivi sono 
+                            spesso quelli di ritorno dalle vacanze estive, Settembre ed Ottobre, mentre 
+                            i mesi poco caratterizzanti sono intorno alla fine del primo trimestre, 
+                            Agosto e Dicembre. Il 2020 é un anno particolare da questo punto di vista, 
+                            complice evidente la pandemia. Infatti vediamo come nei mesi di Marzo ed 
+                            Aprile le pubblicazioni siano piú alte della norma, mentre il picco minimo 
+                            si tocchi ad Agosto.</p>
+                            <br>
+                            <p class="highlight"><strong>Il coronavirus</strong></p>
+                            <br>
+                            <p>Il paese si é trovato blindato in casa per una pandemia globale.
+                            Il coronavirus ha indubbiamente cambiato lo stile di vita degli italiani ma
+                            <strong>quanto ha influito sulle notizie principali?</strong>
+                            Il grafico mostra come le notizie principali del 2019 abbiano subito un notevole
+                            cambiamento nel corso del 2020. Come giá visto nel grafico precedente dove si mostravano
+                            le argomentazioni generali del giornale si vede come il coronavirus sia tra le prime posizioni.
+                            Questo perché dall'inizio di quest anno ha completamente preso il sopravvento su qualsiasi altra
+                            notizia. In particolare risaltano all'occhio keywords legate alla mobilità come <strong>strade, incidenti,viabilità e traffico</strong>,
+                            per poi osservare una diminuzione anche in quelle relative alla criminalità <strong>droga e furti</strong>.
+                        </p>
+                        <br>
+                    </div>
+                    <div class="mapQuartieri">
+
+                        <div id='map' style='width: 60%; height: 100%;'></div>
+                        <div class='map-overlay' id='features'>
+                            <h3>Numero di articoli per quartiere</h3>
+                            <div id='pd'><p>Passa il mouse sui quartieri!</p></div>
+                        </div>
+                        <div class='map-overlay' id='legend'></div>
+                    
+                    </div>
+            </div>
+                
             </section>
 
         </div>
