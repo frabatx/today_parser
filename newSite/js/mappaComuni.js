@@ -5,7 +5,7 @@ var map = new mapboxgl.Map({
     container: 'map-comuni',
     style: 'mapbox://styles/frabatx/ckidhutth015z19o0bltl5q0m', // stylesheet location
     center: [11.08, 46.066],
-    zoom: 11// starting zoom
+    zoom: 8// starting zoom
 });
 
 map.scrollZoom.disable();
@@ -13,7 +13,7 @@ map.scrollZoom.disable();
 map.on('load', function(){
     map.addSource('quartieri', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/frabatx/today_parser/master/newSite/src/countQuartieri.geojson'
+        data: 'https://raw.githubusercontent.com/frabatx/today_parser/master/newSite/src/countComuni.geojson'
       });
 
     map.addLayer({
