@@ -16,6 +16,8 @@ map.on('load', function(){
         data: 'https://raw.githubusercontent.com/frabatx/today_parser/master/newSite/src/countComuni.geojson'
       });
 
+    console.log(data);
+    
     map.addLayer({
         'id': 'quartieri-fill',
         'type': 'fill',
