@@ -16,8 +16,8 @@ map.on('load', function(){
         data: 'https://raw.githubusercontent.com/frabatx/today_parser/master/newSite/src/countComuni.geojson'
       });
 
-    console.log(data);
     
+
     map.addLayer({
         'id': 'quartieri-fill',
         'type': 'fill',
@@ -77,7 +77,7 @@ map.on('load', function(){
         });
         
         if (states.length > 0) {
-          document.getElementById('pd-comuni').innerHTML = "<h4><strong>" + states[0].properties.nome_quart + "</strong></h4><p><strong><em>" + states[0].properties.counts + "</strong> articoli</em></p>";
+          document.getElementById('pd-comuni').innerHTML = "<h4><strong>" + states[0].properties.comune + "</strong></h4><p><strong><em>" + states[0].properties.counts + "</strong> articoli</em></p>";
         } else {
           document.getElementById('pd-comuni').innerHTML = '<p>Passa il mouse sui quartieri!</p>';
         }
