@@ -25,6 +25,7 @@ p{
     line-height: 1.7;
     color: rgb(216, 216, 216);
 }
+
 nav{
     position: fixed;
     justify-content: center;
@@ -485,6 +486,15 @@ nav{
     height: 10px;
     margin-right: 5px;
   }
+
+  /* animazione */
+.custom-p{
+    opacity: 0;
+    transition: opacity 2s;
+}
+.scroll-class{
+    opacity: 1;
+}
  
 
 

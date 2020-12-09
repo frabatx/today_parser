@@ -12,10 +12,11 @@
         >
         
         <!-- Mapbox -->
-
         <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
         <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-            
+        <!-- Locomotive scroll -->
+        <script src="./js/locomotive/locomotive-scroll.min.js"></script>
+        <link rel="stylesheet" href="locomotive.css">
         <!-- Css -->
         <link rel="stylesheet" href="./style.css">
         
@@ -23,7 +24,7 @@
 
     </head>
     <body>
-        <div class="main">
+        <div data-scroll-container class="main">
             <nav>
                 <ul class="nav-links">
                     <li><a href="#landing">Home</a></li>
@@ -33,7 +34,7 @@
                     <li><a href="#conclusioni">Conclusioni</a></li>
                 </ul>
             </nav>
-            <section class="landing">
+            <section data-scroll-section class="landing">
                 <div class="description">
                     <h1><span class="highlight">UNO SPECCHIO SU TRENTO</span></h1>
                     <br>
@@ -56,11 +57,11 @@
                 <div class="landing-image"></div>
             </section>
 
-            <section class="intro">
+            <section data-scroll-section class="intro">
                 <div class="intro-grid">
                     <div class="intro-text">
-                        <h2><span class="highlight">Un po' di background</span></h2>
-                        <p>
+                        <h2 data-scroll data-scroll-speed="3"><span class="highlight">Un po' di background</span></h2>
+                        <p data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="custom-p">
                         Sono stati analizzati i soli articoli del giornale con la consapevolezza che questa non 
                         sia una analisi oggettiva sulla totalitá dei fatti accaduti in provincia ne una rappresentazione 
                         valida per trarre alcun giudizio giornalistico sulla testata presa in esame. La scelta di 
@@ -69,25 +70,25 @@
                         geolocalizzazione che permette un analisi territoriale degli stessi. 
                         </p>
                         <br>
-                         <p>
+                         <p data-scroll-class="scroll-class" data-scroll-repeat="true" data-scroll data-scroll-speed="2" class="custom-p">
                             Attraverso tecniche di Web Scraping dalla piattaforma sono stati raccolti <strong style="color: white">28.681 articoli</strong>, 
                             dal Novembre 2011 a Novembre 2020. I dati da qui ottenuti sono: <strong style="color: white">titolo, sottotitolo, 
                             testo, timestamp, indirizzo e keywords</strong>.
                          </p>
                          <br>
-                         <p>
+                         <p data-scroll-class="scroll-class" data-scroll-repeat="true" data-scroll data-scroll-speed="2" class="custom-p">
                             Le <strong class="highlight">keywords</strong> sono le parole chiave relative all'articolo, vengono utilizzate per 
                             specificare l'argomento dell'articolo e velocizzare le ricerche sul web.
                          </p>
                          <br>
-                         <p>Per <strong class="highlight">manipolazione dati</strong> invece si intende la modifica dei dati originali con lo scopo 
+                         <p data-scroll-class="scroll-class" data-scroll-repeat="true" data-scroll data-scroll-speed="2" class="custom-p">Per <strong class="highlight">manipolazione dati</strong> invece si intende la modifica dei dati originali con lo scopo 
                             di facilitarne le analisi. Si tenga ben presente che per "modifica" non si intende 
                             "alterazione" ma solo una formattazione diversa. Inoltre Attraverso OpenStreetMap 
                             ed alcuni dati ufficiali Istat (vedere fonti) sono state 
                             aggiunti: <strong style="color: white">latitudine, longitudine, comune, quartiere</strong> (solo per il comune di Trento). 
                         </p>
                     </div>
-                    <div class="intro-svg">
+                    <div data-scroll-class="scroll-class" data-scroll data-scroll-speed="3" class="intro-svg cursom-p">
                         <svg width="100%" height="auto" viewBox="0 0 712 224" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                             <rect x="4" width="704" height="215.491" rx="15" fill="#C4C4C4"/>
@@ -180,24 +181,24 @@
                 
             </section>
 
-            <section class="analisi">
+            <section data-scroll-section class="analisi">
                 
                 <div class="analisi-grid">
                     <div class="analisi-description">
-                        <h2><span class="highlight">Analisi</span></h2>
+                        <h2 data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="custom-p"><span class="highlight">Analisi</span></h2>
                         <br>
-                        <p>Le analisi applicate ai dati raccolti sono di due tipi. <br> Per prima una <strong class="highlight">analisi temporale</strong>. 
+                        <p data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="custom-p">Le analisi applicate ai dati raccolti sono di due tipi. <br> Per prima una <strong class="highlight">analisi temporale</strong>. 
                             Qui vengono analizzati gli andamenti delle keyword e degli articoli nel tempo. In fine 
                             una <strong class="highlight">analisi geografica</strong> che utilizza i soli dati geolocalizzabili.
                         </p>
                         <br>
-                        <p>Al fine di diminuire il numero di keyword uniche utilizzate dalla testata giornalistica (4.850) 
+                        <p data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="custom-p">Al fine di diminuire il numero di keyword uniche utilizzate dalla testata giornalistica (4.850) 
                             si é cercato una relazione tra di esse per poter escludere quelle che avevano una forte co-occorrenza. 
                             Il risultato di questo procedimento non ha portato evidenze di particolari relazioni tra le keyword, 
                             escludendo questo approccio. 
                         </p>
                         <br>
-                        <p> 
+                        <p data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="custom-p"> 
                             I 20 argomenti generali piú trattati dal giornale sono quelle rappresentate dal grafico "Top 20 keywords".
                             Risaltano gli incidenti, in gran parte incidenti stradali, che vedono un distacco dalle altre keyword di oltre 
                             2000 articoli. Non é un caso che le strade siano il secondo argomento e a seguire un decremento omogeneo, indice di 
@@ -211,13 +212,13 @@
                 </div>
             </section>
 
-            <section class="analisi-temporale">
+            <section data-scroll-section class="analisi-temporale">
                 
                 <div class="analisi-temporale-grid">
                     <div class="analisiAnnualeDescription">
-                        <h2><span class="highlight">Analisi Temporale</span></h2>
+                        <h2 data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="custom-p"><span class="highlight">Analisi Temporale</span></h2>
                         <br>
-                        <p> Lo studio dei dati in forma di time series ha portato alla luce alcune evidenze. 
+                        <p data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="custom-p"> Lo studio dei dati in forma di time series ha portato alla luce alcune evidenze. 
                             Come si vede dal grafico <strong>"Articoli per anno"</strong> non c'é alcuna sostanziale crescita o decrescita 
                             nel numero annuale di articoli pubblicato. In genere si parla di una media 
                             di 3000 articoli l'anno che possono variare nell'ordine di un centinaio. 
@@ -229,7 +230,7 @@
                             tra alcuni periodi dell'anno.
                         </p> 
                         <br>
-                        <p>
+                        <p data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="custom-p">
                             In particolare alcuni mesi dell'anno sono particolarmente piú produttivi rispetto agli altri.
                             Qui ci viene mostrato come ci sia una evidente differenza in numero di articoli 
                             tra alcuni periodi dell'anno. I mesi in questione sono 
@@ -241,14 +242,14 @@
                             si tocchi ad Agosto.
                         </p>
                     </div>
-                    <div class="graficoAnnuale">
+                    <div data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="graficoAnnuale">
                         <svg id="graficoAnnualesvg" width="1000" height="400"></svg>
                     </div>
                     
                     <div class="analisiMensileDescription">
-                        <h2><span class="highlight">Coronavirus</span></h2>
+                        <h2 data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="custom-p"><span class="highlight">Coronavirus</span></h2>
                         <br>
-                        <p> Il mondo intero si é trovato blindato in casa per una pandemia globale, lontano da famiglia ed affetti.
+                        <p data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="custom-p"> Il mondo intero si é trovato blindato in casa per una pandemia globale, lontano da famiglia ed affetti.
                             Il coronavirus ha indubbiamente cambiato lo stile di vita degli italiani ma
                             <strong class="highlight">quanto ha influito sulle notizie principali?</strong>
                             <br>
@@ -266,10 +267,10 @@
                     </div>
                 
                 
-                    <div class="graficoMensile">
+                    <div data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="graficoMensile">
                         <svg id="graficoMensilesvg" width="1000" height="400"></svg>
                     </div>
-                    <div class="graficoMensilePiccolo">
+                    <div data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="graficoMensilePiccolo">
                         <svg id="graficoMensilePiccolosvg" width="500" height="700"></svg>
                     </div>
                 </div>
@@ -278,7 +279,7 @@
 
             
 
-            <section class="analisi-geografica-comuni">
+            <section data-scroll-section class="analisi-geografica-comuni">
                 <div class="analisi-geografica-comuni-grid">
 
                     <div class="comuniDescription">
@@ -331,7 +332,7 @@
                 
             </section>
 
-            <section class="analisi-geografica">
+            <section data-scroll-section class="analisi-geografica">
                 <div class="analisi-geografica-grid">
 
                     <div class="quartieriDescription">
