@@ -34,11 +34,9 @@
                 </ul>
             </nav>
             <section class="landing">
-                <div class="landing-text">
-                    <h1><span class="highlight">UNO SPECCHIO SU TRENTO</span></h1>
-                    
-                </div>
                 <div class="description">
+                    <h1><span class="highlight">UNO SPECCHIO SU TRENTO</span></h1>
+                    <br>
                     <p>
                         Il Sole 24 Ore rilascia ogni anno stila la classifica delle cittá italiane per qualitá 
                         della vita. Questo tipo di indagine viene redatta da circa 30 anni ed ha visto la 
@@ -65,7 +63,7 @@
                         <p>
                         Sono stati analizzati i soli articoli del giornale con la consapevolezza che questa non 
                         sia una analisi oggettiva sulla totalitá dei fatti accaduti in provincia ne una rappresentazione 
-                        valida per trarre alcuna giudizio giornalistico sulla testata presa in esame. La scelta di 
+                        valida per trarre alcun giudizio giornalistico sulla testata presa in esame. La scelta di 
                         TrentoToday é data dal fatto che gli articoli seguono degli standard di pubblicazione che 
                         favoriscono la raccolta dati, inoltre per la maggior parte delle notizie viene fornita una 
                         geolocalizzazione che permette un analisi territoriale degli stessi. 
@@ -73,8 +71,8 @@
                         <br>
                          <p>
                             Attraverso tecniche di Web Scraping dalla piattaforma sono stati raccolti <strong style="color: white">28.681 articoli</strong>, 
-                            dal Novembre 2011 a Novembre 2020. I dati da qui ottenuti sono: titolo, sottotitolo, 
-                            testo, timestamp, indirizzo e keywords.
+                            dal Novembre 2011 a Novembre 2020. I dati da qui ottenuti sono: <strong style="color: white">titolo, sottotitolo, 
+                            testo, timestamp, indirizzo e keywords</strong>.
                          </p>
                          <br>
                          <p>
@@ -86,7 +84,7 @@
                             di facilitarne le analisi. Si tenga ben presente che per "modifica" non si intende 
                             "alterazione" ma solo una formattazione diversa. Inoltre Attraverso OpenStreetMap 
                             ed alcuni dati ufficiali Istat (vedere fonti) sono state 
-                            aggiunti: latitudine, longitudine, comune, quartiere (solo per il comune di Trento). 
+                            aggiunti: <strong style="color: white">latitudine, longitudine, comune, quartiere</strong> (solo per il comune di Trento). 
                         </p>
                     </div>
                     <div class="intro-svg">
@@ -195,15 +193,20 @@
                         <br>
                         <p>Al fine di diminuire il numero di keyword uniche utilizzate dalla testata giornalistica (4.850) 
                             si é cercato una relazione tra di esse per poter escludere quelle che avevano una forte co-occorrenza. 
-                            Il risultato di questo procediemnto non ha portato evidenze di particolari relazioni tra le keyword, 
+                            Il risultato di questo procedimento non ha portato evidenze di particolari relazioni tra le keyword, 
                             escludendo questo approccio. 
                         </p>
                         <br>
-                        <p>Gli argomenti generali piú trattati dal giornale sono quelle rappresentate dal grafico a destra.</p>
+                        <p> 
+                            I 20 argomenti generali piú trattati dal giornale sono quelle rappresentate dal grafico "Top 20 keywords".
+                            Risaltano gli incidenti, in gran parte incidenti stradali, che vedono un distacco dalle altre keyword di oltre 
+                            2000 articoli. Non é un caso che le strade siano il secondo argomento e a seguire un decremento omogeneo, indice di 
+                            una ampia trattazione degli argomenti da parte di TrentoToday.
+                        </p>
                     
                     </div>
                     <div class="best50key">
-                        <svg width="500" height="800" class="best50svg"></svg>
+                        <svg width="500" height="600" class="best50svg"></svg>
                     </div>
                 </div>
             </section>
@@ -212,49 +215,59 @@
                 
                 <div class="analisi-temporale-grid">
                     <div class="analisiAnnualeDescription">
-                        <h2><span class="highlight">Analisi Annuale</span></h2>
+                        <h2><span class="highlight">Analisi Temporale</span></h2>
                         <br>
-                        <p>
-                            Come si vede dal grafico non c'é alcuna sostanziale crescita o decrescita 
+                        <p> Lo studio dei dati in forma di time series ha portato alla luce alcune evidenze. 
+                            Come si vede dal grafico <strong>"Articoli per anno"</strong> non c'é alcuna sostanziale crescita o decrescita 
                             nel numero annuale di articoli pubblicato. In genere si parla di una media 
-                            di 3000 articoli l'anno che possono variare nell'ordine di un centinaio di 
-                            articoli. I dati del 2020 non sono completi poiché si fermano ad inizio 
+                            di 3000 articoli l'anno che possono variare nell'ordine di un centinaio. 
+                            I dati del 2011 iniziano da novembre quindi é da escludere come anno di riferimento,
+                            quelli del 2020 invece non sono completi poiché si fermano ad inizio 
                             novembre ma si puó presumere una decrescita nel numero delle pubblicazioni 
                             come avviene ogni anno per il periodo natalizio.
+                            Lo studio di un periodo piú granulare come quello mensile ha invece evidenziato alcune differenze
+                            tra alcuni periodi dell'anno.
                         </p> 
-                    </div>
-                    <div class="graficoAnnuale"></div>
-                    
-                    <div class="analisiMensileDescription">
-                        <h2><span class="highlight">Analisi Mensile</span></h2>
                         <br>
-                        <p>Qui ci viene mostrato come ci sia una evidente differenza in numero di articoli 
-                            tra alcuni periodi dell'anno. I mesi in cui ci sono picchi positivi sono 
+                        <p>
+                            In particolare alcuni mesi dell'anno sono particolarmente piú produttivi rispetto agli altri.
+                            Qui ci viene mostrato come ci sia una evidente differenza in numero di articoli 
+                            tra alcuni periodi dell'anno. I mesi in questione sono 
                             spesso quelli di ritorno dalle vacanze estive, Settembre ed Ottobre, mentre 
                             i mesi poco caratterizzanti sono intorno alla fine del primo trimestre, 
                             Agosto e Dicembre. Il 2020 é un anno particolare da questo punto di vista, 
                             complice evidente la pandemia. Infatti vediamo come nei mesi di Marzo ed 
                             Aprile le pubblicazioni siano piú alte della norma, mentre il picco minimo 
-                            si tocchi ad Agosto.</p>
-                            <br>
-                            <p class="highlight"><strong>Il coronavirus</strong></p>
-                            <br>
-                            <p>Il paese si é trovato blindato in casa per una pandemia globale.
+                            si tocchi ad Agosto.
+                        </p>
+                    </div>
+                    <div class="graficoAnnuale">
+                        <svg id="graficoAnnualesvg" width="1000" height="400"></svg>
+                    </div>
+                    
+                    <div class="analisiMensileDescription">
+                        <h2><span class="highlight">Coronavirus</span></h2>
+                        <br>
+                        <p> Il mondo intero si é trovato blindato in casa per una pandemia globale, lontano da famiglia ed affetti.
                             Il coronavirus ha indubbiamente cambiato lo stile di vita degli italiani ma
-                            <strong>quanto ha influito sulle notizie principali?</strong>
-                            Il grafico mostra come le notizie principali del 2019 abbiano subito un notevole
-                            cambiamento nel corso del 2020. Come giá visto nel grafico precedente dove si mostravano
-                            le argomentazioni generali del giornale si vede come il coronavirus sia tra le prime posizioni.
-                            Questo perché dall'inizio di quest anno ha completamente preso il sopravvento su qualsiasi altra
-                            notizia. In particolare risaltano all'occhio keywords legate alla mobilità come <strong>strade, incidenti,viabilità e traffico</strong>,
+                            <strong class="highlight">quanto ha influito sulle notizie principali?</strong>
+                            <br>
+                            Nel 2020 il numero di articoli totali che hanno come keyword coronavirus é di 808.
+                            Questo ha fatto si che nel corso di un solo anno l'argomento coronavirus sia arrivato in quarta posizione
+                            nella classifica "Top 20 keywords" che invece mostra il numero totale di articoli dal 2011.
+                            <br>
+                            Il grafico "2020 vs 2019" mostra come le notizie principali del 2019 abbiano subito un notevole
+                            cambiamento nel corso del 2020. In particolare risaltano all'occhio keywords legate alla mobilità come <strong>strade, incidenti,viabilità e traffico</strong>,
                             per poi osservare una diminuzione anche in quelle relative alla criminalità <strong>droga e furti</strong>.
+                            L'unico argomento in aumento rispetto all'anno precedente é quello relativo agli <strong>orsi</strong> che li vede
+                            protagonisti delle ultime vicende riguardanti alcuni attivisti in sciopero.
                         </p>
                         <br>
                     </div>
                 
                 
                     <div class="graficoMensile">
-                        <svg id="graficoMensilesvg" width="1000" height="600"></svg>
+                        <svg id="graficoMensilesvg" width="1000" height="400"></svg>
                     </div>
                     <div class="graficoMensilePiccolo">
                         <svg id="graficoMensilePiccolosvg" width="500" height="700"></svg>
@@ -263,34 +276,100 @@
             
             </section>
 
+            
+
+            <section class="analisi-geografica-comuni">
+                <div class="analisi-geografica-comuni-grid">
+
+                    <div class="comuniDescription">
+                        <h2><span class="highlight">Analisi Geografica</span></h2>
+                        <br>
+                        <p> 
+                            Qui si é analizzata la componente geografica degli articoli e della loro distribuzione sul territorio
+                            trentino. Dalla mappa "Comuni" é possibile vedere quali sono i comuni piú interessati con un colore che va dal chiaro
+                            allo scuro all'aumentare del numero di articoli. Stesso concetto vale per la mappa "Quartieri di Trento" che adotta lo stesso codice
+                            di colori. Le mappe in questione sono interattive e permettono di ricavare informazioni sul numero di articoli
+                            al passaggio del mouse sulla zona interessata.
+                        </p>
+                        <br>
+                        <p ><strong class="highlight">Trento VS Comuni</strong></p>
+                        <div>
+                            <svg id="trentovscomuni" width='300' height='50'></svg>
+
+                        </div>
+                        <p> 
+                            La mappa mostra come Trento sia il comune piú interessato dalle pubblicazioni. Come seconda Rovereto con 1048 articoli,
+                            seguita da Riva del Garda, Pergine Valsugana e Arco. È interessante notare come il numero di articoli sia 
+                            in qualche modo connesso con la densitá di popolazione del comune. Infatti dai dati istat vediamo come tra le cittá
+                            con maggior popolazione, in ordine di densitá di popolazione ci sono Rovereto, Riva del garda, Pergine Valsugana ed Arco.
+                        </p>
+                        <br>
+                        <p> 
+                            Il grafico "Argomenti nei comuni" mostra quali sono le keyword piú frequenti nel territorio trentino, escluso il comune di Trento.
+                            Le notizie che interessano i comuni sono prevalentemente incidenti, considerando il territorio montuoso e le difficoltá
+                            di mobilità durante i freddi inverni. A seguire <strong>furti</strong> e <strong>carabinieri</strong> che hanno una relazione
+                            del 10%. Questo dato é interpretabile come la co-occorrenza tra le due keyword, in particolare sta a significare che sono utilizzate
+                            assieme il 10% delle volte.
+                            È interessante notare come l'argomento coronavirus sia molto marginale nei comuni mentre abbia una rilevanza particolare, se non primaria,
+                             nel comune di Trento, segno del fatto che le comunicazioni che interessano tutta la provincia vengono canalizzate e geolocalizzate a Trento.
+                        </p>
+                    </div>
+                    <div class="mapComuni">
+
+                        <div id='map-comuni' style='width: 60%; height: 70%;'></div>
+                        <div class='map-overlay-comuni' id='features-comuni'>
+                            <h3>Numero di articoli per comune</h3>
+                            <div id='pd-comuni'><p>Passa il mouse sui comuni!</p></div>
+                        </div>
+                        <div class='map-overlay-comuni' id='legend-comuni'></div>
+                    
+                    </div>
+                    <div class="comuni20key">
+                        <svg id="comuni20key" width='450' height='300'></svg>
+                    </div>
+                </div>
+                
+            </section>
+
             <section class="analisi-geografica">
                 <div class="analisi-geografica-grid">
 
                     <div class="quartieriDescription">
-                        <h2><span class="highlight">Analisi Geografica</span></h2>
+                        <p ><strong class="highlight">Centro Storico VS Altri quartieri</strong></p>
                         <br>
-                        <p>Qui ci viene mostrato come ci sia una evidente differenza in numero di articoli 
-                            tra alcuni periodi dell'anno. I mesi in cui ci sono picchi positivi sono 
-                            spesso quelli di ritorno dalle vacanze estive, Settembre ed Ottobre, mentre 
-                            i mesi poco caratterizzanti sono intorno alla fine del primo trimestre, 
-                            Agosto e Dicembre. Il 2020 é un anno particolare da questo punto di vista, 
-                            complice evidente la pandemia. Infatti vediamo come nei mesi di Marzo ed 
-                            Aprile le pubblicazioni siano piú alte della norma, mentre il picco minimo 
-                            si tocchi ad Agosto.</p>
-                            <br>
-                            <p class="highlight"><strong>Il coronavirus</strong></p>
-                            <br>
-                            <p>Il paese si é trovato blindato in casa per una pandemia globale.
-                            Il coronavirus ha indubbiamente cambiato lo stile di vita degli italiani ma
-                            <strong>quanto ha influito sulle notizie principali?</strong>
-                            Il grafico mostra come le notizie principali del 2019 abbiano subito un notevole
-                            cambiamento nel corso del 2020. Come giá visto nel grafico precedente dove si mostravano
-                            le argomentazioni generali del giornale si vede come il coronavirus sia tra le prime posizioni.
-                            Questo perché dall'inizio di quest anno ha completamente preso il sopravvento su qualsiasi altra
-                            notizia. In particolare risaltano all'occhio keywords legate alla mobilità come <strong>strade, incidenti,viabilità e traffico</strong>,
-                            per poi osservare una diminuzione anche in quelle relative alla criminalità <strong>droga e furti</strong>.
+                        <p> Essendo Trento la città più rappresentativa per la produzione editoriale ci si potrebbe chiedere quali siano i quartieri
+                            più popolari e quali siano le tipologie di articoli che li vedono protagonisti.
                         </p>
                         <br>
+                        <p> 
+                            Escludendo i punti di geolocalizzazione generale "Trento" e che quindi vengono di default indicizzati nel Centro Storico, sono 
+                            stati considerati solo gli articoli che contenevano l'indirizzo completo e non solo il tag "città".
+                            <br>
+                            <br>
+                            Come già accennato nei paragrafi precedenti il coronavirus è l'argomento principale del 2020 che ha monopolizzato l'attenzione mediatica.
+                            Con questa premessa non stupisce che sia anche la keyword piú utilizzata indicizzata nel capoluogo di provincia.
+                            La restante parte degli argomenti trattati sono quelli facenti parte del tessuto sociale della città. Università e scuola occupano seconda e terza posizione rimarcando 
+                            il ruolo di Trento come città universitaria occupando i primi posti nelle classifice nazionali delle università italiane.
+                            Il lavoro, il meteo, le strade, la viabilità sono tutti tra le "Top 20 keyword" analizzate in precedenza ed avendo Trento la maggior parte degli articoli è chiaro 
+                            che abbia gli stessi argomenti.
+                        </p>
+
+                        <br>
+                        <p ><strong class="highlight">C'è criminalità a Trento? E in Trentino?</strong></p>
+                        <br>
+                        <p>
+                            Le keyword che possono essere ricondotte alla criminalità sono: <strong>furti e droga</strong>, con numero di articoli rispettivamente di 850 e 567.
+                            C'è bisogno di precisare che questi numeri indicano la <strong>totalitá degli articoli in tutta la provincia trentina nell'arco di 9 anni</strong>.
+                            <br>
+                            Questo presupposto è importante per capire la rilevanza di questi numeri osservati da una prospettiva diversa. Prendendo come riferimento Trento e dividendo i dati in anni
+                            vediamo i due andamenti in modo decisamente meno impattante.
+                        </p>
+                        <svg id="drogaTrento" width="400" height="300"></svg>
+                        <svg id="furtiTrento" width="400" height="300"></svg>
+                        <p>
+                            Per concludere, i numeri non ci portano a pensare che a Trento ci sia criminalità ma è importante notare il trend in crescita per <strong>droga</strong> anche se a causa del Coronavirus
+                            i dati del 2020 non possono rappresentare un indicatore di decrescita di tale fenomeno.
+                        </p>
                     </div>
                     <div class="mapQuartieri">
 
@@ -303,48 +382,6 @@
                     
                     </div>
             </div>
-            </section>
-
-            <section class="analisi-geografica-comuni">
-                <div class="analisi-geografica-comuni-grid">
-
-                    <div class="comuniDescription">
-                        <h2><span class="highlight">Analisi Geografica</span></h2>
-                        <br>
-                        <p>Qui ci viene mostrato come ci sia una evidente differenza in numero di articoli 
-                            tra alcuni periodi dell'anno. I mesi in cui ci sono picchi positivi sono 
-                            spesso quelli di ritorno dalle vacanze estive, Settembre ed Ottobre, mentre 
-                            i mesi poco caratterizzanti sono intorno alla fine del primo trimestre, 
-                            Agosto e Dicembre. Il 2020 é un anno particolare da questo punto di vista, 
-                            complice evidente la pandemia. Infatti vediamo come nei mesi di Marzo ed 
-                            Aprile le pubblicazioni siano piú alte della norma, mentre il picco minimo 
-                            si tocchi ad Agosto.</p>
-                            <br>
-                            <p class="highlight"><strong>Il coronavirus</strong></p>
-                            <br>
-                            <p>Il paese si é trovato blindato in casa per una pandemia globale.
-                            Il coronavirus ha indubbiamente cambiato lo stile di vita degli italiani ma
-                            <strong>quanto ha influito sulle notizie principali?</strong>
-                            Il grafico mostra come le notizie principali del 2019 abbiano subito un notevole
-                            cambiamento nel corso del 2020. Come giá visto nel grafico precedente dove si mostravano
-                            le argomentazioni generali del giornale si vede come il coronavirus sia tra le prime posizioni.
-                            Questo perché dall'inizio di quest anno ha completamente preso il sopravvento su qualsiasi altra
-                            notizia. In particolare risaltano all'occhio keywords legate alla mobilità come <strong>strade, incidenti,viabilità e traffico</strong>,
-                            per poi osservare una diminuzione anche in quelle relative alla criminalità <strong>droga e furti</strong>.
-                        </p>
-                        <br>
-                    </div>
-                    <div class="mapComuni">
-
-                        <div id='map-comuni' style='width: 60%; height: 100%;'></div>
-                        <div class='map-overlay-comuni' id='features-comuni'>
-                            <h3>Numero di articoli per quartiere</h3>
-                            <div id='pd-comuni'><p>Passa il mouse sui quartieri!</p></div>
-                        </div>
-                        <div class='map-overlay-comuni' id='legend-comuni'></div>
-                    
-                    </div>
-                </div>
             </section>
 
         </div>
@@ -361,5 +398,8 @@
         <script type="module" src="./js/compare20192020.js"></script>
         <script type="module" src="./js/mappaQuartieri.js"></script>
         <script type="module" src="./js/mappaComuni.js"></script>
+        <script type="module" src="./js/drogaTrento.js"></script>
+        <script type="module" src="./js/furtiTrento.js"></script>
+        <script type="module" src="./js/comuni20key.js"></script>
     </body>
 </html>

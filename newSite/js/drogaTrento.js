@@ -1,27 +1,33 @@
 
 
-const svg = d3.select('#graficoAnnualesvg');
+const svg = d3.select('#drogaTrento');
+
+// var svg = d3.select(".graficoAnnuale")
+//   .append("svg")
+//   .attr("preserveAspectRatio", "xMidYMid meet")
+//   .attr("viewBox", "0 0 800 1000")
+//   .classed("graficoAnnualeSvg", true);
 
 
 const render = data =>{
     // Settaggi generali
-    const margin = {top: 60,right: 50,bottom: 100,left: 150}
+    const margin = {top: 60,right: 50,bottom: 100,left: 50}
     const width = +svg.attr('width');
     const height = +svg.attr('height')
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
-    const paddingX = 5;
     // Settaggi view
-    const title = "Articoli per anno"
-    const xAxisLabel = "Anni";
+    const title = "Droga a Trento"
+    const xAxisLabel = "Mesi";
     const yAxisLabel = "Numero di articoli";
     const xValue = d => d.timestamp;
     const yValue = d => d.counts;
     // Settaggi assi
     const xScale = d3.scaleLinear()
-        .domain(d3.extent(data, xValue))
-        .range([paddingX,innerWidth])
-        .nice();
+    .domain(d3.extent(data, xValue))
+    .range([0,innerWidth])
+    .nice();
+
     
     const yScale = d3.scaleLinear()
         .domain(d3.extent(data, yValue))
@@ -33,9 +39,10 @@ const render = data =>{
         .tickSize(-innerHeight)
         .tickPadding(10);
 
+
     const yAxis = d3.axisLeft(yScale)
-            .tickSize(-innerWidth)
-            .tickPadding(10);
+        .tickSize(-innerWidth)
+        .tickPadding(10);
 
     // Nuovo gruppo all'interno dell'svg
     const g = svg.append('g')
@@ -49,24 +56,29 @@ const render = data =>{
     yAxisG.selectAll('.domain')
         .remove();
 
+    yAxisG.selectAll(".tick line")
+        .attr("stroke","rgb(87, 87, 87)");
+
     yAxisG.append('text')
         .attr('class', 'axisTitle')
-        .attr('y', -70)
+        .attr('y', -40)
         .attr('x', -innerHeight/2)
         .attr('fill', 'white')
         .attr('text-anchor', 'middle')
         .attr('transform', 'rotate(-90)')
         .text(yAxisLabel);
-
     
     // Asse x
     const xAxisG = g.append('g')
         .call(xAxis)
-        .attr('transform', `translate(0, ${innerHeight})`);
+        .attr('transform', `translate(0, ${innerHeight+15})`);
         
     xAxisG.select('.domain')
         .remove();
-        
+    
+    xAxisG.selectAll(".tick line")
+        .attr("stroke","rgb(87, 87, 87)");
+
 
     xAxisG.append('text')
         .attr('class', 'axisTitle')
@@ -81,7 +93,6 @@ const render = data =>{
 
     g.append('path')
     .attr('class', 'linePath')
-        .attr('stroke', 'black')
         .attr('d', lineGenerator(data));
 
     // g.selectAll('circle')
@@ -100,7 +111,7 @@ const render = data =>{
 
 };
 
-d3.csv('/src/countPerYear.csv').then(data => {
+d3.csv('/src/drogaTrento.csv').then(data => {
     //parsing string to int
     data.forEach(d => {
         d.counts = +d.counts;

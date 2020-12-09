@@ -77,7 +77,7 @@ map.on('load', function(){
 
     var layers = ['1-20', '20-50', '50-100', '100-200', '200-400', '400-1000', '1000+'];
     var colors = ['#ffe0b2', '#ffb74d', '#ffa726', '#ff9800', '#f57c00', '#e65100', '#bf360c'];
-    var legend_comuni = document.getElementById('legend-comuni')
+    var legend_comuni = document.getElementById('legend')
     for (var i = 0; i < layers.length; i++) {
         var layer = layers[i];
         var color = colors[i];

@@ -41,7 +41,7 @@ const render = data =>{
 
     const xAxisYear = d3.axisBottom(xScale)
         .tickFormat(d3.timeFormat('%Y'))
-        .tickSize(-innerHeight)
+        .tickSize(-innerHeight-20)
         .tickPadding(10);
 
     const yAxis = d3.axisLeft(yScale)
