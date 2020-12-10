@@ -5,7 +5,7 @@ var map = new mapboxgl.Map({
     container: 'map-comuni',
     style: 'mapbox://styles/frabatx/ckidhutth015z19o0bltl5q0m', // stylesheet location
     center: [11.08, 46.2],
-    zoom: 8// starting zoom
+    zoom: 8.5// starting zoom
 });
 
 map.scrollZoom.disable();

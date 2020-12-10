@@ -19,13 +19,15 @@ const render = data =>{
         top: 60,
         right: 20,
         bottom: 60,
-        left: 120
+        left: 100
     }
 
     // const width = parseInt(d3.select('.best50key').style('width'));
     // const height = parseInt(d3.select('.best50key').style('height'));
-    const width = +svg.attr('width');
-    const height = +svg.attr('height');
+    // const width = +svg.attr('width');
+    // const height = +svg.attr('height');
+    const width = parseInt(svg.style("width"));
+    const height = parseInt(svg.style("height"));
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
 

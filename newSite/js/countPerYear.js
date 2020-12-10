@@ -1,13 +1,13 @@
 
-
 const svg = d3.select('#graficoAnnualesvg');
-
 
 const render = data =>{
     // Settaggi generali
-    const margin = {top: 60,right: 50,bottom: 100,left: 150}
-    const width = +svg.attr('width');
-    const height = +svg.attr('height')
+    const margin = {top: 50,right: 150,bottom: 100,left: 100}
+    // const width = +svg.attr('width');
+    // const height = +svg.attr('height')
+    const width = parseInt(svg.style("width"));
+    const height = parseInt(svg.style("height"));
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
     const paddingX = 5;
@@ -20,7 +20,7 @@ const render = data =>{
     // Settaggi assi
     const xScale = d3.scaleLinear()
         .domain(d3.extent(data, xValue))
-        .range([paddingX,innerWidth])
+        .range([0,innerWidth])
         .nice();
     
     const yScale = d3.scaleLinear()

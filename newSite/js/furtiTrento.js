@@ -93,7 +93,11 @@ const render = data =>{
 
     g.append('path')
     .attr('class', 'linePath')
-        .attr('d', lineGenerator(data));
+    .attr('d', lineGenerator(data));
+
+    g.selectAll('.tick text')
+        .style('font-size', '1.3em' )
+
 
     // g.selectAll('circle')
     // .data(data)

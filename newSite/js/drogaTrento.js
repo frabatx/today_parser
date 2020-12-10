@@ -108,6 +108,10 @@ const render = data =>{
         .text(title)
         .attr('y', -15);
 
+    g.selectAll('.tick text')
+        .style('font-size', '1.3em' )
+
+
 
 };
 

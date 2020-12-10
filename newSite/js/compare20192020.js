@@ -57,6 +57,10 @@ const render = data =>{
         .attr('class','ciao')
         .selectAll('.domain, .tick line')
         .remove();
+
+    g.selectAll('.tick text')
+        .style('font-size', '1.3em' )
+
     
     const xAxisG = g.append('g')
         .call(xAxis)
@@ -127,7 +131,7 @@ const render = data =>{
         .attr('class', 'titleTop50Key')
         .text("2020 vs 2019")
         .attr('y', -innerHeight-15)
-        .attr('x', -innerWidth-25);
+        .attr('x', -innerWidth-10);
     
 };
 

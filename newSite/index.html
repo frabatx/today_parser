@@ -81,7 +81,7 @@
                     </div>
                     <div data-scroll-class="scroll-class" data-scroll data-scroll-speed="3" class="intro-svg cursom-p">
                         <!-- VANNO GLI SVG DI SIGMA -->
-                        <svg width="694" height="467" viewBox="0 0 694 467" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="694" height="467" viewBox="0 0 694 467" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                             <rect x="5" y="81" width="118" height="298" rx="22" fill="#C4C4C4"/>
                             </g>
@@ -372,7 +372,7 @@
                     
                     </div>
                     <div class="best50key">
-                        <svg width="500" height="600" class="best50svg"></svg>
+                        <svg  width="100%" height="100%" viewBox="-200 -200 1400 1600" class="best50svg"></svg>
                     </div>
                 </div>
             </section>
@@ -408,7 +408,11 @@
                         </p>
                     </div>
                     <div data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="graficoAnnuale">
-                        <svg id="graficoAnnualesvg" width="800" height="400"></svg>
+                        <svg id="graficoAnnualesvg" width="100%" height="100%" viewBox="150 0 600 400" preserveAspectRatio="xMidYMid meet"></svg>
+                    </div>
+
+                    <div data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="graficoMensile">
+                        <svg id="graficoMensilesvg" width="100%" height="100%" viewBox="150 0 600 400" preserveAspectRatio="xMidYMid meet"></svg>
                     </div>
                     
                     <div class="analisiMensileDescription">
@@ -432,9 +436,7 @@
                     </div>
                 
                 
-                    <div data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="graficoMensile">
-                        <svg id="graficoMensilesvg" width="900" height="400"></svg>
-                    </div>
+                    
                     <div data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="graficoMensilePiccolo">
                         <svg id="graficoMensilePiccolosvg" width="500" height="700"></svg>
                     </div>
@@ -512,7 +514,7 @@
                     
                     </div>
                     <div class="comuni20key">
-                        <svg id="comuni20key" width='700' height='350'></svg>
+                        <svg id="comuni20key" width="80%" height="100%" viewBox="50 0 700 500" preserveAspectRatio="xMidYMid meet"></svg>
                     </div>
                 </div>
                 
@@ -539,7 +541,8 @@
                             Il lavoro, il meteo, le strade, la viabilità sono tutti tra le "Top 20 keyword" analizzate in precedenza ed avendo Trento la maggior parte degli articoli è chiaro 
                             che abbia gli stessi argomenti.
                         </p>
-                        <h3 data-scroll-class="scroll-class" data-scroll data-scroll-speed="1.8" class="custom-p"><span class="highlight">C'è criminalità a Trento? E in Trentino?</span></h2>
+                        <br>
+                        <h3 data-scroll-class="scroll-class" data-scroll data-scroll-speed="1.8" class="custom-p"><span class="highlight">E la criminalità?</span></h2>
                         <br>
                         <p data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="custom-p">
                             Le keyword che possono essere ricondotte alla criminalità sono: <strong>furti e droga</strong>, con numero di articoli rispettivamente di 850 e 567.
@@ -548,17 +551,25 @@
                             Questo presupposto è importante per capire la rilevanza di questi numeri osservati da una prospettiva diversa. Infatti prendendo come riferimento la sola cittá di Trento e raggruppando i dati in anni
                             vediamo i due andamenti in modo decisamente meno impattante.
                         </p>
-                        <svg id="drogaTrento" width="400" height="300"></svg>
-                        <svg id="furtiTrento" width="400" height="300"></svg>
+                        
                         
                         <p data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="custom-p" id="conclusione-criminal">
                             I numeri non ci portano a pensare che a Trento ci siano numeri importanti di articoli sulla criminalità ma è giusto sottolineare un trend in crescita per <strong>droga</strong> tra il 2018 e il 2019 poichè causa del Coronavirus
                             i dati del 2020 non possono rappresentare un indicatore di decrescita del fenomeno.
                         </p>
+                        <br>
+                        <br>
                     </div>
+                    <div data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="drogatrento">
+                        <svg id="drogaTrento" width="400" height="400"></svg>
+                    </div>
+                    <div data-scroll-class="scroll-class" data-scroll data-scroll-speed="2" class="furtitrento">
+                        <svg id="furtiTrento" width="400" height="400"></svg>
+                    </div>
+                    
                     <div class="mapQuartieri">
 
-                        <div id='map' style='width: 50%; height: 90%;'></div>
+                        <div id='map' ></div>
                         <div class='map-overlay' id='features'>
                             <h3>Numero di articoli per quartiere</h3>
                             <div id='pd'><p>Passa il mouse sui quartieri!</p></div>

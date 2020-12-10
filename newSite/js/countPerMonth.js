@@ -1,19 +1,13 @@
 
-
 const svg = d3.select('#graficoMensilesvg');
-
-// var svg = d3.select(".graficoAnnuale")
-//   .append("svg")
-//   .attr("preserveAspectRatio", "xMidYMid meet")
-//   .attr("viewBox", "0 0 800 1000")
-//   .classed("graficoAnnualeSvg", true);
-
 
 const render = data =>{
     // Settaggi generali
-    const margin = {top: 60,right: 50,bottom: 100,left: 150}
-    const width = +svg.attr('width');
-    const height = +svg.attr('height')
+    const margin = {top: 50,right: 150,bottom: 100,left: 100}
+    // const width = +svg.attr('width');
+    // const height = +svg.attr('height');
+    const width = parseInt(svg.style("width"));
+    const height = parseInt(svg.style("height"));
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
     const paddingX = 5;

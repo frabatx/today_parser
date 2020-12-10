@@ -22,10 +22,10 @@ const render = data =>{
         left: 100
     }
 
-    // const width = parseInt(d3.select('.best50key').style('width'));
-    // const height = parseInt(d3.select('.best50key').style('height'));
-    const width = +svg.attr('width');
-    const height = +svg.attr('height');
+    const width = parseInt(svg.style("width"));
+    const height = parseInt(svg.style("height"));
+    // const width = +svg.attr('width');
+    // const height = +svg.attr('height');
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
 
@@ -35,6 +35,7 @@ const render = data =>{
         .nice();
     
     const xAxis = d3.axisBottom(xScale)
+    .tickFormat(d3.format(""))
     .tickSize(-innerHeight);
 
     const yScale = d3.scaleBand()
@@ -52,6 +53,7 @@ const render = data =>{
         .call(yAxis)
         .selectAll('.domain, .tick line')
         .remove();
+
     
     const xAxisG = g.append('g')
         .call(xAxis)
@@ -66,7 +68,10 @@ const render = data =>{
         .attr('x', innerWidth/2)
         .attr('fill', 'white')
         .text('Numero di articoli totali per keyword');
-        
+    
+    g.selectAll('.tick text')
+        .style('font-size', '2em' )
+
 
     g.selectAll('rect')
     .data(data)

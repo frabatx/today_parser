@@ -5,6 +5,8 @@
 }
 
 body{ 
+    justify-content: center;
+    align-content: center;
     font-family: 'Hudi', sans-serif;
     font-size: 1.2rem;
     background-color: rgb(46, 46, 46);
@@ -21,8 +23,8 @@ h2{
 }
 p{
     font-family: 'Hudi', sans-serif;
-    font-size: clamp(13px,.8vw,200px);
-    line-height: 1.7;
+    font-size: clamp(16px,.6vw,200px);
+    line-height: 1.8;
     color: rgb(216, 216, 216);
 }
 
@@ -44,7 +46,7 @@ nav{
 }
 .highlight{
     /* background:  #ffe659;  */
-    background: #ffd900;
+    background: #ffc400;
     color: black;
 }
 .highlight-lite{
@@ -91,7 +93,6 @@ nav{
     grid-area: landing;
     padding: 3em;
     margin-top: 4em;
-    background: rgb(46, 46, 46);
     font-family: "hidi", sans-serif;
     
 }
@@ -99,9 +100,8 @@ nav{
 
 /* INTRODUCTION */
 .intro-grid{
-    background: rgb(46, 46, 46);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     grid-template-rows: 1fr;
     grid-template-areas: "introduction svg";
     height: 100vh;
@@ -111,8 +111,6 @@ nav{
     height: 100vh;
     color: rgb(216, 216, 216);
     font-family: "hidi", sans-serif;
-    font-size: 1.3rem;
-    align-self: center;
     padding: 4em;
 }
 .intro-text p{
@@ -121,7 +119,6 @@ nav{
 
 .intro-svg{
     grid-area: svg;
-    background: rgb(46, 46, 46);
     padding: 5em 2em;
     display: flex;
     flex-direction: column;
@@ -133,7 +130,6 @@ nav{
     height: 100vh;
 }
 .analisi-grid{
-    background: rgb(46, 46, 46);
     display: grid;
     grid-template-columns: 40% auto;
     grid-template-rows: auto;
@@ -144,7 +140,6 @@ nav{
 .analisi-description{
     grid-area: description;
     height: 100vh;
-    background: rgb(46, 46, 46);
     font-family: "hidi", sans-serif;
     font-size: 1.3rem;
     align-self: center;
@@ -197,21 +192,14 @@ nav{
 /* ANALISI ANNUALE */
 
 .analisiAnnualeDescription{
-    background: rgb(46, 46, 46);
     grid-area: annualeDescrizione;
     font-family: "hidi", sans-serif;
     padding: 4rem;
 }
 
 .graficoAnnuale{
-    background: rgb(46, 46, 46);
-    grid-area: graficoAnnuale;
-}
-.graficoAnnuale svg{
     color: rgb(216, 216, 216);
-    margin: 1rem;
-    justify-self: center;
-    align-self: center;
+    grid-area: graficoAnnuale;
 }
 
 .linePath{
@@ -232,7 +220,6 @@ nav{
 
 .analisiMensileDescription{
     grid-area: coronavirus;
-    background: rgb(46, 46, 46);
     font-family: "hidi", sans-serif;
     margin: 8rem;
 }
@@ -240,7 +227,6 @@ nav{
 /* GRAFICO MENSILE */
 
 .graficoMensile{
-    background: rgb(46, 46, 46);
     color: rgb(216, 216, 216);
     grid-area: graficoMensile;
 }
@@ -252,12 +238,11 @@ nav{
 /* GRAFICO 2020 VS 2021 */
 
 .graficoMensilePiccolo{
-    background: rgb(46, 46, 46);
     grid-area: ventidiciannove;
 }
 #graficoMensilePiccolosvg{
-    margin: 8rem;
-    margin-top: 4rem;
+    /* margin: 8rem;
+    margin-top: 4rem; */
     color: rgb(216, 216, 216);
 }
 #graficoMensilePiccolosvg rect{
@@ -275,7 +260,7 @@ nav{
 
 .analisi-geografica-comuni{
     position: relative;
-    height: 100vh;
+    height: 140vh;
     width: 100%;
 }
 .analisi-geografica-comuni-grid{
@@ -287,17 +272,11 @@ nav{
     "comuni20key descrizioneComuni";
     height: 100%;
 }
-#drogaTrento{
-    color: rgb(216, 216, 216) ;
-}
-#furtiTrento{
-    color: rgb(216, 216, 216) ;
-}
 
 .comuni20key{
     grid-area: comuni20key;
-    background: rgb(46, 46, 46);
-    margin-left: 4em;
+    margin-left: 1em;
+    margin-bottom: 2em;
 }
 .comuni20key rect{
     fill: rgb(255, 136, 0);
@@ -318,7 +297,6 @@ nav{
 }
 .comuniDescription{
     grid-area: descrizioneComuni;
-    background: rgb(46, 46, 46);
     font-family: "hidi", sans-serif;
     padding: 3rem;
 }
@@ -385,25 +363,29 @@ nav{
 
 .analisi-geografica{
     position: relative;
-    height: 120vh;
+    height: 160vh;
     width: 100%;
 }
 .analisi-geografica-grid{
     display: grid;
     grid-template-columns: 50% 25% 25%;
-    grid-template-rows: 70% 20% 10%;
+    grid-template-rows: 60% 40%;
     grid-template-areas: 
     "mappaQuartieri descrizioneQuartieri descrizioneQuartieri"
-    "mappaQuartieri droga furti"
-    "mappaQuartieri concluisone conclusione"
+    ". droga furti"
     ;
     height: 100%;
 }
-#drogaTrento{
+.drogatrento{
     grid-area: droga;
+    color: rgb(216, 216, 216) ;
+    padding: 2em;
 }
-#furtiTrento{
+
+.furtitrento{
     grid-area: furti;
+    color: rgb(216, 216, 216) ;
+    padding: 2em;
 }
 #conclusione-criminal{
     grid-area: conclusione;
@@ -420,6 +402,8 @@ nav{
 
 #map {
     position: absolute;
+    width: 50%; 
+    height: 80%;
     top: 0;
     bottom: 0;
   }
@@ -480,7 +464,6 @@ nav{
 
 .quartieriDescription{
     grid-area: descrizioneQuartieri;
-    background: rgb(46, 46, 46);
     font-family: "hidi", sans-serif;
     padding: 4rem;
 }
@@ -492,7 +475,7 @@ nav{
   /* animazione */
 .custom-p{
     opacity: 0;
-    transition: opacity 2s;
+    transition: opacity 3s;
 }
 .scroll-class{
     opacity: 1;
@@ -507,12 +490,12 @@ nav{
     display: block;
 }
 .progressbar-wrapper {
-    width: 200px;
-    height: 60px;
+    width: 250px;
+    height: 30px;
     top: 50%;
     left: 25%;
-    position: absolute;
-    transform: translate(-50%, -50%);
+    position: relative;
+    transform: translate(-70%, 50%);
 }
 .progressbar {
     width: 100%;
@@ -537,10 +520,10 @@ nav{
     transform-origin: bottom;
 }
 .back {
-    transform: translateZ(-60px);
+    transform: translateZ(-30px);
 }
 .left {
-    width: 60px;
+    width: 30px;
     transform: rotateY(90deg);
     transform-origin: left;
     background-color: rgb(255, 136, 0, .6);
@@ -552,6 +535,159 @@ nav{
 }
 .bar p{
     padding: .3em;
+}
+
+/* mediaqueries */
+
+
+/* Schermi Desktop o Portatili */
+@media all and (min-width: 1200px) and (max-width: 1689px) { 
+
+    .analisi-geografica{
+        height: 180vh;
+    }
+
+    .analisi-geografica-grid{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 25% 25%;
+        grid-template-areas: 
+        "mappaQuartieri descrizioneQuartieri "
+        "mappaQuartieri droga "
+        ".  furti"
+        ;
+        height: 100%;
+    }
+    #map{
+        height: 50%;
+    }
+
+    /* progressbar */
+
+    .progressbar-wrapper {
+        height: 30px;
+        position: relative;
+        transform: translate(-50%, 50%);
+    }
+
+    .back {
+        transform: translateZ(-30px);
+    }
+    .left {
+        width: 30px;
+
+    }
+    /* mappe */
+    
+
+
+ }
+
+/* Tablet in modalità orizzontale */
+@media all and (min-width: 737px) and (max-width: 1199px) { 
+    
+    /* intro */
+    .landing{
+        height:100vh;
+    }
+    .intro-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: 
+        "introduction"
+        "svg"
+        ;
+    }
+    .intro-svg{
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* Analisi */
+
+    .analisi-grid{
+        display: grid;
+        grid-template-columns: auto 600px;
+        grid-template-rows: 1fr;
+        grid-template-areas: "description graph";
+    }
+    .analisi-temporale{
+        height: 220vh;
+    }
+    .analisi-temporale-grid{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 22% 400px 400px 1000px;
+        grid-template-areas: 
+        "annualeDescrizione annualeDescrizione"
+        "graficoAnnuale graficoAnnuale"
+        "graficoMensile graficoMensile"
+        "coronavirus ventidiciannove";
+        height: 100%;
+        justify-content: left;
+        
+    }
+    .analisi-description{
+        padding: 2em;
+        padding-top: 9em;
+    }
+    .best50key{
+
+        margin: 1em;
+    }
+
+    .analisiMensileDescription{
+        margin: 2rem;
+    }
+
+    /* mappe */
+    .analisi-geografica{
+        height: 200vh;
+    }
+    .analisi-geografica-grid{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 30% 20% 30%;
+        grid-template-areas: 
+        "mappaQuartieri mappaQuartieri descrizioneQuartieri descrizioneQuartieri"
+        "mappaQuartieri mappaQuartieri concluisone concluisone"
+        "droga  droga furti furti"
+        ;
+        height: 100%;
+    }
+
+    .analisi-geografica-comuni{
+        
+        height: 150vh;
+        
+    }
+
+    
+    #map{
+        height: 50%;
+    }
+
+    .comuni20key{
+        margin: 2em;
+    }
+
+
+    /* progressbar */
+
+    .progressbar-wrapper {
+        height: 30px;
+        position: relative;
+        transform: translate(-30%, 50%);
+    }
+
+    .back {
+        transform: translateZ(-30px);
+    }
+    .left {
+        width: 30px;
+
+    }
 }
 
 
