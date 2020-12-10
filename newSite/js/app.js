@@ -6,3 +6,5 @@
         multiplier: .8
         });
 })();
+
+$('.bar').width('59%');

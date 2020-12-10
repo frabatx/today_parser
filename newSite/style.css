@@ -63,7 +63,7 @@ nav{
     grid-template-rows: 1fr;
     grid-template-areas: 
     "landing image";
-    height: 100vh;
+    height: 80vh;
 }
 
 .nav-links{
@@ -83,15 +83,17 @@ nav{
 
 
 .landing-image{
+    margin-top: 4em;
     grid-area: image;
     background: url("./src/4_5915707698027956208.jpg");
 }
 .description{
     grid-area: landing;
-    padding: 4em;
+    padding: 3em;
+    margin-top: 4em;
     background: rgb(46, 46, 46);
     font-family: "hidi", sans-serif;
-    font-size: 1.3rem;
+    
 }
 
 
@@ -179,16 +181,15 @@ nav{
 
 /* ANALISI TEMPORALE */
 .analisi-temporale{
-    height: 220vh;
+    height: 180vh;
 }
 .analisi-temporale-grid{
     display: grid;
-    grid-template-columns: 50% 700;
-    grid-template-rows: 25% 400px 400px auto;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 22% 400px 1000px;
     grid-template-areas: 
     "annualeDescrizione annualeDescrizione"
-    "graficoAnnuale graficoAnnuale"
-    "graficoMensile graficoMensile"
+    "graficoAnnuale graficoMensile"
     "coronavirus ventidiciannove";
     height: 100%;
 }
@@ -233,7 +234,7 @@ nav{
     grid-area: coronavirus;
     background: rgb(46, 46, 46);
     font-family: "hidi", sans-serif;
-    padding: 4rem;
+    margin: 8rem;
 }
 
 /* GRAFICO MENSILE */
@@ -252,12 +253,11 @@ nav{
 
 .graficoMensilePiccolo{
     background: rgb(46, 46, 46);
-    justify-content: center;
-    align-items: center;
     grid-area: ventidiciannove;
 }
 #graficoMensilePiccolosvg{
-    margin: 4rem;
+    margin: 8rem;
+    margin-top: 4rem;
     color: rgb(216, 216, 216);
 }
 #graficoMensilePiccolosvg rect{
@@ -270,22 +270,144 @@ nav{
 }
 
 /* MAPPE */
-/* Mappa quartieri Trento */
 
-.analisi-geografica{
+/* Mappa Comuni */
+
+.analisi-geografica-comuni{
     position: relative;
     height: 100vh;
     width: 100%;
 }
-.analisi-geografica-grid{
+.analisi-geografica-comuni-grid{
     display: grid;
     grid-template-columns: 60% 40%;
-    grid-template-rows: 1fr;
+    grid-template-rows: 60% 40%;
     grid-template-areas: 
-    "mappaQuartieri descrizioneQuartieri";
+    "mappaComuni descrizioneComuni"
+    "comuni20key descrizioneComuni";
     height: 100%;
 }
+#drogaTrento{
+    color: rgb(216, 216, 216) ;
+}
+#furtiTrento{
+    color: rgb(216, 216, 216) ;
+}
 
+.comuni20key{
+    grid-area: comuni20key;
+    background: rgb(46, 46, 46);
+    margin-left: 4em;
+}
+.comuni20key rect{
+    fill: rgb(255, 136, 0);
+}
+.comuni20key g{
+    color: rgb(216, 216, 216);
+}
+
+
+.mapboxgl-popup-content{
+    background: #1f1f1f;
+    color: white;
+    font-style: 'Monserrat', sans-serif;
+}
+
+.mapComuni{
+    grid-area: mappaComuni;
+}
+.comuniDescription{
+    grid-area: descrizioneComuni;
+    background: rgb(46, 46, 46);
+    font-family: "hidi", sans-serif;
+    padding: 3rem;
+}
+
+
+#map-comuni {
+    position: absolute;
+    top: 0;
+  }
+.map-overlay-comuni {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.6);
+    margin-right: 20px;
+    font-family: 'Montserrat', sans-serif;
+    overflow: auto;
+    border-radius: 3px;
+  }
+  
+  #features-comuni {
+    position: relative;
+    height: 180px;
+    width: 300px;
+    margin: 1em;
+    top:1em;
+    padding: 1em;
+  }
+  
+  #legend-comuni {
+    font-family: "hidi", sans-serif;
+    position: relative;
+    top: 2em;
+    padding: 2.2em;
+    height: 180px;
+    margin: 1em;
+    width: 150px;
+    font-size: 13px;
+  }
+  #pd-comuni{
+    font-family: "hidi", sans-serif;
+    margin-top: 2em;
+    color: rgb(46, 46, 46);
+  }
+  #pd-comuni strong{
+    font-family: "hidi", sans-serif;
+    color: rgb(46, 46, 46);
+  }
+  #pd-comuni em{
+    font-family: "hidi", sans-serif;
+    color: rgb(46, 46, 46);
+  }
+  #pd-comuni p{
+    font-family: "hidi", sans-serif;
+    color: rgb(46, 46, 46);
+  }
+  .legend-key-comuni {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+  }
+/* Mappa quartieri Trento */
+
+.analisi-geografica{
+    position: relative;
+    height: 120vh;
+    width: 100%;
+}
+.analisi-geografica-grid{
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    grid-template-rows: 70% 20% 10%;
+    grid-template-areas: 
+    "mappaQuartieri descrizioneQuartieri descrizioneQuartieri"
+    "mappaQuartieri droga furti"
+    "mappaQuartieri concluisone conclusione"
+    ;
+    height: 100%;
+}
+#drogaTrento{
+    grid-area: droga;
+}
+#furtiTrento{
+    grid-area: furti;
+}
+#conclusione-criminal{
+    grid-area: conclusione;
+}
 .mapboxgl-popup-content{
     background: #1f1f1f;
     color: white;
@@ -312,180 +434,60 @@ nav{
     border-radius: 3px;
   }
   
-  #features {
+#features {
     position: relative;
-    height: 140px;
+    height: 180px;
     width: 300px;
     margin: 1em;
     top:1em;
     padding: 1em;
   }
   
-  #legend {
+#legend {
     font-family: "hidi", sans-serif;
     justify-content: center;
     align-items: center;
     position: relative;
     top: 2em;
-    padding: 1.2em;
+    padding: 1.4em;
     height: 150px;
     margin: 1em;
     width: 120px;
+    font-size: 13px;
   }
-  #pd{
+#pd{
     font-family: "hidi", sans-serif;
     margin-top: 2em;
     color: rgb(46, 46, 46);
   }
   #pd strong{
-    font-family: "hidi", sans-serif;
     color: rgb(46, 46, 46);
   }
   #pd em{
-    font-family: "hidi", sans-serif;
     color: rgb(46, 46, 46);
   }
   #pd p{
-    font-family: "hidi", sans-serif;
     color: rgb(46, 46, 46);
   }
   
-  .legend-key {
-      
+.legend-key {
     display: inline-block;
     width: 10px;
     height: 10px;
     margin-right: 5px;
+    font-size:  clamp(10px,.8vw,20px)!important;
   }
 
-  .quartieriDescription{
+.quartieriDescription{
     grid-area: descrizioneQuartieri;
     background: rgb(46, 46, 46);
     font-family: "hidi", sans-serif;
     padding: 4rem;
 }
-.quartieriDescription p {
-    font-size: clamp(12px,1vw,200px);
-
-}
 
 
 
-/* Mappa Comuni */
 
-.analisi-geografica-comuni{
-    position: relative;
-    height: 100vh;
-    width: 100%;
-}
-.analisi-geografica-comuni-grid{
-    display: grid;
-    grid-template-columns: 60% 40%;
-    grid-template-rows: 70% 30%;
-    grid-template-areas: 
-    "mappaComuni descrizioneComuni"
-    "comuni20key descrizioneComuni";
-    height: 100%;
-}
-#drogaTrento{
-    color: rgb(216, 216, 216) ;
-}
-#furtiTrento{
-    color: rgb(216, 216, 216) ;
-}
-
-.comuni20key{
-    grid-area: comuni20key;
-    background: rgb(46, 46, 46);
-}
-.comuni20key rect{
-    fill:rgb(255, 136, 0)
-}
-.comuni20key g{
-    color: rgb(216, 216, 216);
-}
-
-
-.mapboxgl-popup-content{
-    background: #1f1f1f;
-    color: white;
-    font-style: 'Monserrat', sans-serif;
-}
-
-.mapComuni{
-    grid-area: mappaComuni;
-}
-.comuniDescription{
-    grid-area: descrizioneComuni;
-    background: rgb(46, 46, 46);
-    font-family: "hidi", sans-serif;
-    padding: 4rem;
-}
-
-.comuniDescription p {
-    font-size: clamp(12px,1vw,200px);
-
-}
-
-#map-comuni {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-  }
-.map-overlay-comuni {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.6);
-    margin-right: 20px;
-    font-family: 'Montserrat', sans-serif;
-    overflow: auto;
-    border-radius: 3px;
-  }
-  
-  #features-comuni {
-    position: relative;
-    height: 120px;
-    width: 300px;
-    margin: 1em;
-    top:1em;
-    padding: 1em;
-  }
-  
-  #legend-comuni {
-    font-family: "hidi", sans-serif;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 2em;
-    padding: 1.2em;
-    height: 180px;
-    margin: 1em;
-    width: 130px;
-  }
-  #pd-comuni{
-    font-family: "hidi", sans-serif;
-    margin-top: 2em;
-    color: rgb(46, 46, 46);
-  }
-  #pd-comuni strong{
-    font-family: "hidi", sans-serif;
-    color: rgb(46, 46, 46);
-  }
-  #pd-comuni em{
-    font-family: "hidi", sans-serif;
-    color: rgb(46, 46, 46);
-  }
-  #pd-comuni p{
-    font-family: "hidi", sans-serif;
-    color: rgb(46, 46, 46);
-  }
-  .legend-key-comuni {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin-right: 5px;
-  }
 
   /* animazione */
 .custom-p{
@@ -497,9 +499,60 @@ nav{
 }
  
 
+/* Progress bar */
 
-
-
+.wrapper {
+    width: 100%;
+    min-height: 80px;
+    display: block;
+}
+.progressbar-wrapper {
+    width: 200px;
+    height: 60px;
+    top: 50%;
+    left: 25%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.progressbar {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(-20deg);
+}
+.side {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(254, 254, 254, 0.3);
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.bottom {
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+.top {
+    transform: translate(0, -100%) rotateX(90deg);
+    transform-origin: bottom;
+}
+.back {
+    transform: translateZ(-60px);
+}
+.left {
+    width: 60px;
+    transform: rotateY(90deg);
+    transform-origin: left;
+    background-color: rgb(255, 136, 0, .6);
+}
+.bar {
+    height:100%;
+    background-color: rgb(255, 136, 0,.6);
+    width:70%;
+}
+.bar p{
+    padding: .3em;
+}
 
 
 
