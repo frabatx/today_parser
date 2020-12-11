@@ -23,7 +23,7 @@ h2{
 }
 p{
     font-family: 'Hudi', sans-serif;
-    font-size: clamp(16px,.6vw,200px);
+    font-size: clamp(14px,.6vw,200px);
     line-height: 1.8;
     color: rgb(216, 216, 216);
 }
@@ -87,7 +87,9 @@ nav{
 .landing-image{
     margin-top: 4em;
     grid-area: image;
-    background: url("./src/4_5915707698027956208.jpg");
+    background: url("./src/fullsizeoutput_5.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
 }
 .description{
     grid-area: landing;
@@ -119,37 +121,40 @@ nav{
 
 .intro-svg{
     grid-area: svg;
-    padding: 5em 2em;
+    
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ANALISI */
 .analisi{
-    height: 100vh;
+    height: 120vh;
 }
 .analisi-grid{
     display: grid;
     grid-template-columns: 40% auto;
     grid-template-rows: auto;
     grid-template-areas: "description graph";
-    height: 100vh;
+    height: 100%;
 }
 
 .analisi-description{
     grid-area: description;
+    display: flex;
+    justify-content:center;
+    align-items: center;
     height: 100vh;
     font-family: "hidi", sans-serif;
     font-size: 1.3rem;
-    align-self: center;
     grid-area: 1/1/2/2;
     padding: 4em;
-    padding-top: 9em;
 }
 
 .best50key{
-    align-self: center;
+    display: flex;
+    justify-content:center;
+    align-items: center;
     margin: 4em;
 }
 
@@ -164,9 +169,8 @@ nav{
 #best50svg line{
     stroke: rgb(87, 87, 87);
 }
-
 .titleTop50Key{
-    font-size: 2em;
+    font-size: 1.3em;
     fill: rgb(216, 216, 216);
 }
 
@@ -198,6 +202,9 @@ nav{
 }
 
 .graficoAnnuale{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: rgb(216, 216, 216);
     grid-area: graficoAnnuale;
 }
@@ -208,9 +215,7 @@ nav{
     stroke-width: 3;
     stroke-linejoin: round;
 }
-.graficoAnnuale .axisTitle{
-    font-size: 1.5rem;
-}
+
 
 .graficoAnnuale line{
     stroke: rgb(87, 87, 87);
@@ -219,6 +224,9 @@ nav{
 /* DESCRIZIONE GRAFICO MENSILE */
 
 .analisiMensileDescription{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     grid-area: coronavirus;
     font-family: "hidi", sans-serif;
     margin: 8rem;
@@ -227,17 +235,19 @@ nav{
 /* GRAFICO MENSILE */
 
 .graficoMensile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: rgb(216, 216, 216);
     grid-area: graficoMensile;
-}
-
-.graficoMensile .axisTitle{
-    font-size: 1.5rem;
 }
 
 /* GRAFICO 2020 VS 2021 */
 
 .graficoMensilePiccolo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: ventidiciannove;
 }
 #graficoMensilePiccolosvg{
@@ -274,6 +284,9 @@ nav{
 }
 
 .comuni20key{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     grid-area: comuni20key;
     margin-left: 1em;
     margin-bottom: 2em;
@@ -369,7 +382,7 @@ nav{
 .analisi-geografica-grid{
     display: grid;
     grid-template-columns: 50% 25% 25%;
-    grid-template-rows: 60% 40%;
+    grid-template-rows: 40% 60%;
     grid-template-areas: 
     "mappaQuartieri descrizioneQuartieri descrizioneQuartieri"
     ". droga furti"
@@ -378,12 +391,17 @@ nav{
 }
 .drogatrento{
     grid-area: droga;
+    display: flex;
+    justify-content:center;
     color: rgb(216, 216, 216) ;
     padding: 2em;
 }
 
 .furtitrento{
     grid-area: furti;
+    display: flex;
+    justify-content:center;
+
     color: rgb(216, 216, 216) ;
     padding: 2em;
 }
@@ -537,11 +555,70 @@ nav{
     padding: .3em;
 }
 
+
+/* footer */
+
+.conclusioni{
+    height: 120vh;
+
+}
+.conclusioni-grid{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "text image";
+    height: 100%;
+}
+.footer-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4em;
+    grid-area: text;
+}
+.footer-image{
+    grid-area: image;
+    background: url("./src/fullsizeoutput_5.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.footer{
+    height: 100vh;
+    width: 100%;
+    background: black;
+}
+.source{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+
+
 /* mediaqueries */
 
+@media all and (min-width: 1690px) { 
+    .analisi-temporale{
+        height: 220vh
+    }
+}
 
 /* Schermi Desktop o Portatili */
 @media all and (min-width: 1200px) and (max-width: 1689px) { 
+
+    .landing{
+        height: 120vh;
+    }
+    .analisi-temporale{
+        height: 250vh
+    }
 
     .analisi-geografica{
         height: 180vh;
@@ -550,11 +627,10 @@ nav{
     .analisi-geografica-grid{
         display: grid;
         grid-template-columns: 50% 50%;
-        grid-template-rows: 50% 25% 25%;
+        grid-template-rows: 60% 40%;
         grid-template-areas: 
         "mappaQuartieri descrizioneQuartieri "
-        "mappaQuartieri droga "
-        ".  furti"
+        "droga  furti"
         ;
         height: 100%;
     }
@@ -588,20 +664,23 @@ nav{
     
     /* intro */
     .landing{
-        height:100vh;
+        height:120vh;
+    }
+    .intro{
+        height:180vh;
     }
     .intro-grid{
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: auto;
         grid-template-rows: 50% 50%;
         grid-template-areas: 
         "introduction"
         "svg"
         ;
+        height: 100%;
     }
     .intro-svg{
-        justify-content: center;
-        align-items: center;
+        grid-area: svg;
     }
     
     /* Analisi */
@@ -613,7 +692,7 @@ nav{
         grid-template-areas: "description graph";
     }
     .analisi-temporale{
-        height: 220vh;
+        height: 280vh;
     }
     .analisi-temporale-grid{
         display: grid;
@@ -633,11 +712,14 @@ nav{
         padding-top: 9em;
     }
     .best50key{
-
+        display:flex;
+        justify-content: center;
+        align-items: center;
         margin: 1em;
     }
 
     .analisiMensileDescription{
+        
         margin: 2rem;
     }
 
@@ -648,7 +730,7 @@ nav{
     .analisi-geografica-grid{
         display: grid;
         grid-template-columns: 25% 25% 25% 25%;
-        grid-template-rows: 30% 20% 30%;
+        grid-template-rows: 30% 40% 30%;
         grid-template-areas: 
         "mappaQuartieri mappaQuartieri descrizioneQuartieri descrizioneQuartieri"
         "mappaQuartieri mappaQuartieri concluisone concluisone"
@@ -687,6 +769,9 @@ nav{
     .left {
         width: 30px;
 
+    }
+    .conclusioni{
+        height: 150vh;
     }
 }
 

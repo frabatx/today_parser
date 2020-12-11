@@ -35,6 +35,7 @@ const render = data =>{
         .nice();
     
     const xAxis = d3.axisBottom(xScale)
+    .ticks(5)
     .tickFormat(d3.format(""))
     .tickSize(-innerHeight);
 
@@ -67,11 +68,8 @@ const render = data =>{
         .attr('y', 50)
         .attr('x', innerWidth/2)
         .attr('fill', 'white')
-        .text('Numero di articoli totali per keyword');
+        .text('Numero di articoli per keyword');
     
-    g.selectAll('.tick text')
-        .style('font-size', '2em' )
-
 
     g.selectAll('rect')
     .data(data)

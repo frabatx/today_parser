@@ -87,14 +87,6 @@ const render = data =>{
         .attr('width', d=>xScale(xValue(d)))
         .attr('height', yScale.bandwidth())
 
-    // g.append('text')
-    //     .attr('class', 'titleTop50Key')
-    //     .text("Top 20 keywords")
-    //     .attr('y', -15)
-    //     .attr('x', );
-
-    
-    // SX part
 
     const xScaleSX = d3.scaleLinear()
         .domain([0, 250])
@@ -131,7 +123,7 @@ const render = data =>{
         .attr('class', 'titleTop50Key')
         .text("2020 vs 2019")
         .attr('y', -innerHeight-15)
-        .attr('x', -innerWidth-10);
+        .attr('x', 35-innerWidth );
     
 };
 
